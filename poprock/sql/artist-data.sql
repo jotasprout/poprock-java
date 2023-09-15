@@ -8,6 +8,10 @@ create table artist (
     artist_art_filename varchar(144) DEFAULT NULL
 );
 
+select s.artist_name, m.artist_name, s.artist_id_spot, m.artist_id_mb
+from artistSpot s
+join artistMB m on s.artist_name = m.artist_name;
+
 INSERT INTO artist (artist_id_spot, artist_id_mb, artist_name) VALUES
 ('5M52tdBnJaKSvOpJGz8mfZ', '5182c1d9-c7d2-4dad-afa0-ccfeada921a8', 'Black Sabbath'),
 ('7bu3H8JO7d0UbMoVzbo70s', '69ee3720-a7cb-4402-b48d-a02c366f2bcf', 'The Cure'),
@@ -21,8 +25,4 @@ INSERT INTO artist (artist_id_spot, artist_id_mb, artist_name) VALUES
 ('1dfeR4HaWDbWqFHLkxsg1d', '0383dadf-2a4e-4d10-a46a-e9e041da8eb3', 'Queen'),
 ('2UZMlIwnkgAEDBsw1Rejkn', '5ca3f318-d028-4151-ac73-78e2b2d6cdcc', 'Tom Petty'),
 ('4tX2TplrkIP4v05BNC903e', 'f93dbc64-6f08-4033-bcc7-8a0bb4689849', 'Tom Petty and the Heartbreakers');
-
-
-
-
 
