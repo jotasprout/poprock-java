@@ -18,7 +18,7 @@ Building data visualization app with java
 
 ### Cover Art Archive
 
-https://musicbrainz.org/doc/Cover_Art_Archive/API
+- [Album Art Archive] (https://musicbrainz.org/doc/Cover_Art_Archive/API)
 
 ### FanArt.tv
 

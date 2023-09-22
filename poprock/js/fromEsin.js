@@ -3,7 +3,7 @@ fetch(
     {
       headers: {
         Accept: "application/json",
-        "User-Agent": "Esin Test/1.2.0 ( esin.saribudak@gmail.com )"
+        "User-Agent": "X Test/1.2.0 ( useremail@xmail.com )"
       }
     }
   )
