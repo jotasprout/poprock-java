@@ -1,2 +1,4 @@
-package poprock.models;public class Album {
+package poprock.models;
+
+public class Album {
 }

@@ -1,2 +1,4 @@
-package poprock.data;public interface TrackRepo {
+package poprock.data;
+
+public interface TrackRepo {
 }

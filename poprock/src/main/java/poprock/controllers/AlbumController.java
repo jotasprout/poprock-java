@@ -1,2 +1,4 @@
-package poprock.controllers;public class AlbumController {
+package poprock.controllers;
+
+public class AlbumController {
 }

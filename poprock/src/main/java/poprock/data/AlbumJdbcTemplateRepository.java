@@ -1,2 +1,4 @@
-package poprock.data;public class AlbumJdbcTemplateRepository {
+package poprock.data;
+
+public class AlbumJdbcTemplateRepository {
 }

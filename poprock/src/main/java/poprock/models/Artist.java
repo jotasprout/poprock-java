@@ -1,2 +1,4 @@
-package poprock.models;public class Artist {
+package poprock.models;
+
+public class Artist {
 }

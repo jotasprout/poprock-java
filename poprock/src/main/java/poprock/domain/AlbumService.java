@@ -1,2 +1,4 @@
-package poprock.domain;public class AlbumService {
+package poprock.domain;
+
+public class AlbumService {
 }

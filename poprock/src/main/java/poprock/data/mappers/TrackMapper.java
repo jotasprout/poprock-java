@@ -1,2 +1,4 @@
-package poprock.data.mappers;public class TrackMapper {
+package poprock.data.mappers;
+
+public class TrackMapper {
 }
