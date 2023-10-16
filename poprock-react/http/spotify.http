@@ -1,0 +1,18 @@
+@url = https://api.spotify.com/v1
+
+
+###
+
+GET {{url}}/artist/5M52tdBnJaKSvOpJGz8mfZ HTTP/1.1
+// Gets Black Sabbath from Spotify
+
+###
+
+GET {{url}}/artists/ HTTP/1.1
+
+// Gets Black Sabbath release groups
+
+###
+
+
+###
