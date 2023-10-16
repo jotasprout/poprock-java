@@ -1,4 +1,5 @@
 use poprock;
+use poprock_test;
 
 select * from artist;
 select * from album;
