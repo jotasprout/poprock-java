@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
 
 export default function Auth(){
@@ -25,7 +24,6 @@ export default function Auth(){
         }
 
         setToken(token);
-        console.log(token);
 
     }, []);
 
@@ -61,8 +59,8 @@ export default function Auth(){
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Spotify React</h1>
-
+                <h1>PopRock</h1>
+                <h2>SpotifySearch</h2>
                 <form onSubmit={searchArtists}>
                     <input type="text" onChange={e => setSearchKey(e.target.value)}/>
                     <button type={"submit"}>Search</button>

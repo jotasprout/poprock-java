@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from "./components/Header";
 import Landing from "./components/Landing";
-import Callback from './components/auth/Callback';
 
 import TrackList from "./components/track/TrackList";
 import ArtistList from "./components/artist/ArtistList";
@@ -30,7 +29,6 @@ export default function App() {
         <Header />
         <Routes>
             <Route path='/' element={<Landing />} />
-            <Route path='/callback' element={<Callback />} />
 
             <Route path='/albums' element={<AlbumList />} />
             <Route path='/artists' element={<ArtistList />} />
