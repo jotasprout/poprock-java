@@ -4,6 +4,7 @@
 ###
 
 GET {{url}}/artist/5M52tdBnJaKSvOpJGz8mfZ HTTP/1.1
+Authorization: Bearer 
 // Gets Black Sabbath from Spotify
 
 ###

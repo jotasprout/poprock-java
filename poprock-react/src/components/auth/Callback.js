@@ -27,7 +27,11 @@ export default function Callback(){
         }
 
         setToken(token);
-    }, [])
+        console.log(token);
+
+    }, []);
+
+    
 
     const logout = () => {
         setToken("")
@@ -71,8 +75,7 @@ export default function Callback(){
                 {renderArtists()}
 
                 {!token ?
-                    <Link to={`${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`}>Login
-                        to Spotify</Link>
+                    <Link to={`${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`}>Get Auth Token</Link>
                     : <button onClick={logout}>Logout</button>}
             </header>
         </div>

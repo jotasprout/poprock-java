@@ -6,7 +6,7 @@ export default function This(){
     const client_secret = ''; 
     const auth_endpoint = 'https://accounts.spotify.com/authorize';
     const response_type = 'token';
-    const redirect_uri = 'http://localhost:3000/callback';
+    const redirect_uri = 'http://localhost:3000';
 
     return (
         <>
