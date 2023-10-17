@@ -8,14 +8,57 @@ GET {{url}}/artist HTTP/1.1
 
 ###
 
-GET {{url}}/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8 HTTP/1.1
-// Gets Black Sabbath in XML
+GET {{url}}/artist/fc4953aa-6bf4-4f1f-8e47-5ac79ca428e2?inc=artist-rels&fmt=json HTTP/1.1
+
+// Gets Ronnie James Dio 
+
+###
+
+GET {{url}}/artist/3d1aee55-e0c2-4f5e-b339-8252991fe9da?inc=artist-rels&fmt=json HTTP/1.1
+
+// Gets Steve Hunter 
+
+###
+
+GET {{url}}/artist/f92d6bfd-76e7-4394-aaec-9490756eb50c?inc=artist-rels&fmt=json HTTP/1.1
+
+// Gets Dick Wagner 
+
+###
+
+GET {{url}}/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8?inc=artist-rels&fmt=json HTTP/1.1
+
+// Gets Black Sabbath and artist relationships
 
 ###
 
 GET {{url}}/artist/5182c1d9-c7d2-4dad-afa0-ccfeada921a8?inc=release-groups&fmt=json HTTP/1.1
 
 // Gets Black Sabbath release groups
+
+###
+
+GET {{url}}/release-group/65b17904-31c4-303e-a6a2-7c2e750945c7?inc=release-groups&fmt=json HTTP/1.1
+
+// Gets Welcome To My Nightmare release group
+
+###
+
+GET {{url}}/release/81686d96-d0f6-33b4-b0a7-f9ae2ffb65f1?inc=release-groups&fmt=json HTTP/1.1
+
+// Gets Welcome To My Nightmare release 
+
+###
+
+GET {{url}}/recording/9c630a78-00e0-4c07-998c-cdd3d4d5ce06?inc=artist-rels&fmt=json HTTP/1.1
+
+// Gets Welcome To My Nightmare track 
+
+###
+
+GET {{url}}/work/0c2ec5c0-6ba2-411a-a147-364f43b5ba8d?fmt=json HTTP/1.1
+
+// Gets Welcome To My Nightmare work 
 
 ###
 
