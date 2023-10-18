@@ -1,7 +1,7 @@
-package learn.field_agent.controllers;
+package poprock.controllers;
 
-import learn.field_agent.domain.Result;
-import learn.field_agent.domain.ResultType;
+import poprock.domain.Result;
+import poprock.domain.ResultType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

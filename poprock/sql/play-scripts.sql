@@ -1,6 +1,8 @@
 use poprock;
 use poprock_test;
 
+select artist_id, artist_name from artist;
+
 call set_known_good_state();
 
 select * from artist;
