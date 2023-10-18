@@ -31,17 +31,49 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
 
     @Override
     public Artist findById(int artistId) {
-        return null;
+        
+        final String sql = "select artist_id, artist_name, artist_art_filename, artist_id_mb, artist_id_spot "
+                + "from artist "
+                + "where artist_id = ?;";
+
+        Artist artist = jdbcTemplate.query(sql, new ArtistMapper(), artistId)
+                .stream()
+                .findFirst().orElse(null);
+
+//        if (artist != null) {
+//            addAgencies(artist);
+//            addAliases(artist);
+//        }
+
+        return artist;
     }
 
     @Override
     public Artist add(Artist artist) {
-        return null;
+        final String sql = "insert into artist (artist_name, artist_id_mb, artist_id_spot) values (?,?,?);";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        int rowsAffected = jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, artist.getArtistName());
+            ps.setString(2, artist.getArtistMbid());
+            ps.setString(3, artist.getArtistSpotifyId());
+            return ps;
+        }, keyHolder);
+        if (rowsAffected <= 0) {
+            return null;
+        }
+        artist.setArtistId(keyHolder.getKey().intValue());
+        return artist;
     }
 
     @Override
     public boolean update(Artist artist) {
-        return false;
+        final String sql = "update artist set artist_id_mb = ?, artist_id_spot = ? where artist_id = ?;";
+
+        return jdbcTemplate.update(sql,
+                artist.getArtistMbid(),
+                artist.getArtistSpotifyId(),
+                artist.getArtistId()) > 0;
     }
 
     @Override

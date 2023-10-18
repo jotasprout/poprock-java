@@ -158,6 +158,9 @@ begin
     alter table artist_playcount auto_increment = 1;
     delete from artist;
 	alter table artist auto_increment = 1;
+    
+    INSERT INTO artist (artist_id_spot, artist_name) VALUES
+		('0oSGxfWSnnOXhD2fKuz2Gy', 'David Bowie');
 
 	INSERT INTO artist (artist_id_spot, artist_id_mb, artist_name) VALUES
 		('5M52tdBnJaKSvOpJGz8mfZ', '5182c1d9-c7d2-4dad-afa0-ccfeada921a8', 'Black Sabbath'),

@@ -11,6 +11,25 @@ public class Artist {
     private Double artistPlaycount;
     private int artistPopularity;
 
+    public Artist(int artistId, String artistName, String artistMbid, String artistSpotifyId, String artistType, Double artistListeners, Double artistPlaycount, int artistPopularity) {
+        this.artistId = artistId;
+        this.artistName = artistName;
+        this.artistMbid = artistMbid;
+        this.artistSpotifyId = artistSpotifyId;
+        this.artistType = artistType;
+        this.artistListeners = artistListeners;
+        this.artistPlaycount = artistPlaycount;
+        this.artistPopularity = artistPopularity;
+    }
+
+    public Artist(int artistId, String artistMbid) {
+        this.artistId = artistId;
+        this.artistMbid = artistMbid;
+    }
+
+    public Artist(){
+    }
+
     public int getArtistPopularity() {
         return artistPopularity;
     }

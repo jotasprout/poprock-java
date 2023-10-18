@@ -158,6 +158,9 @@ begin
     alter table artist_playcount auto_increment = 1;
     delete from artist;
 	alter table artist auto_increment = 1;
+    
+    INSERT INTO artist (artist_id_spot, artist_name) VALUES
+		('0oSGxfWSnnOXhD2fKuz2Gy', 'David Bowie');
 
 	INSERT INTO artist (artist_id_spot, artist_id_mb, artist_name) VALUES
 		('5M52tdBnJaKSvOpJGz8mfZ', '5182c1d9-c7d2-4dad-afa0-ccfeada921a8', 'Black Sabbath'),
@@ -172,6 +175,7 @@ begin
 		('1dfeR4HaWDbWqFHLkxsg1d', '0383dadf-2a4e-4d10-a46a-e9e041da8eb3', 'Queen'),
 		('2UZMlIwnkgAEDBsw1Rejkn', '5ca3f318-d028-4151-ac73-78e2b2d6cdcc', 'Tom Petty'),
 		('4tX2TplrkIP4v05BNC903e', 'f93dbc64-6f08-4033-bcc7-8a0bb4689849', 'Tom Petty and the Heartbreakers');
+        
 
 end //
 

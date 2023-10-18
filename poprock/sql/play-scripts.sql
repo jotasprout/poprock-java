@@ -1,9 +1,14 @@
 use poprock;
 use poprock_test;
 
+update artist set artist_id_mb = '5441c29d-3602-4898-b1a1-b77fa23b8e50' where artist_id = 13;
+
 select artist_id, artist_name from artist;
 
 call set_known_good_state();
+
+	INSERT INTO artist (artist_id_spot, artist_name) VALUES
+		('0oSGxfWSnnOXhD2fKuz2Gy', 'David Bowie');
 
 select * from artist;
 select * from album;
