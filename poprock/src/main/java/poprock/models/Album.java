@@ -13,6 +13,15 @@ public class Album {
     private Double albumPlaycount;
     private String albumLabel;
     private String albumStatus;
+    private int albumPopularity;
+
+    public int getAlbumPopularity() {
+        return albumPopularity;
+    }
+
+    public void setAlbumPopularity(int albumPopularity) {
+        this.albumPopularity = albumPopularity;
+    }
 
     public int getAlbumId() {
         return albumId;

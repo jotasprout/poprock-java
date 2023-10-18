@@ -9,6 +9,14 @@ public class Track {
     private String trackSpotifyId;
     private Double trackListeners;
     private Double trackPlaycount;
+    private int trackPopularity;
+    public int getTrackPopularity() {
+        return trackPopularity;
+    }
+
+    public void setTrackPopularity(int trackPopularity) {
+        this.trackPopularity = trackPopularity;
+    }
 
     public int getTrackId() {
         return trackId;

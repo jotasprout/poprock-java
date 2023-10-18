@@ -5,11 +5,19 @@ public class Artist {
     private int artistId;
     private String artistName;
     private String artistMbid;
-
     private String artistSpotifyId;
     private String artistType;
     private Double artistListeners;
     private Double artistPlaycount;
+    private int artistPopularity;
+
+    public int getArtistPopularity() {
+        return artistPopularity;
+    }
+
+    public void setArtistPopularity(int artistPopularity) {
+        this.artistPopularity = artistPopularity;
+    }
 
     public int getArtistId() {
         return artistId;

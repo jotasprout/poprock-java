@@ -1,6 +1,8 @@
 use poprock;
 use poprock_test;
 
+call set_known_good_state();
+
 select * from artist;
 select * from album;
 select * from song;
