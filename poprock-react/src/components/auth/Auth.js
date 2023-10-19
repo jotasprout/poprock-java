@@ -45,13 +45,17 @@ export default function Auth(){
         })
     
         setArtists(data.artists.items)
+        console.log(data.artists);
     }
 
     const renderArtists = () => {
         return artists.map(artist => (
             <div key={artist.id}>
-                {artist.images.length ? <img width={"100%"} src={artist.images[0].url} alt=""/> : <div>No Image</div>}
-                {artist.name}
+                {artist.images.length ? <img width={"50%"} src={artist.images[0].url} alt=""/> : <div>No Image</div>}
+                <p>
+                    {artist.name}<br />
+                    {artist.id}
+                </p>
             </div>
         ))
     }
@@ -59,8 +63,8 @@ export default function Auth(){
     return (
         <div className="App">
             <header className="App-header">
-                <h1>PopRock</h1>
-                <h2>SpotifySearch</h2>
+                <h1>Spotify Search</h1>
+                <h2></h2>
                 <form onSubmit={searchArtists}>
                     <input type="text" onChange={e => setSearchKey(e.target.value)}/>
                     <button type={"submit"}>Search</button>
