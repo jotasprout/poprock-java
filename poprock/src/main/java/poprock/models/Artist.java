@@ -1,25 +1,28 @@
 package poprock.models;
 
+import java.util.List;
+
 public class Artist {
 
     private int artistId;
-    private String artistName;
-    private String artistMbid;
     private String artistSpotifyId;
-    private String artistType;
-    private Double artistListeners;
-    private Double artistPlaycount;
+    private String artistName;
     private int artistPopularity;
+    private Double artistFollowers;
+    private String artistMbid;
 
-    public Artist(int artistId, String artistName, String artistMbid, String artistSpotifyId, String artistType, Double artistListeners, Double artistPlaycount, int artistPopularity) {
+//    private String artistType;
+//    private Double artistListeners;
+//    private Double artistPlaycount;
+//    private List<String> artistGenres;
+
+    public Artist(int artistId, String artistSpotifyId, String artistName, int artistPopularity, Double artistFollowers, String artistMbid) {
         this.artistId = artistId;
-        this.artistName = artistName;
-        this.artistMbid = artistMbid;
         this.artistSpotifyId = artistSpotifyId;
-        this.artistType = artistType;
-        this.artistListeners = artistListeners;
-        this.artistPlaycount = artistPlaycount;
+        this.artistName = artistName;
         this.artistPopularity = artistPopularity;
+        this.artistFollowers = artistFollowers;
+        this.artistMbid = artistMbid;
     }
 
     public Artist(int artistId, String artistMbid) {
@@ -27,8 +30,21 @@ public class Artist {
         this.artistMbid = artistMbid;
     }
 
+    public Artist(String artistName, String artistSpotifyId) {
+        this.artistName = artistName;
+        this.artistSpotifyId = artistSpotifyId;
+    }
+
     public Artist(){
     }
+
+//    public List<String> getArtistGenres() {
+//        return artistGenres;
+//    }
+//
+//    public void setArtistGenres(List<String> artistGenres) {
+//        this.artistGenres = artistGenres;
+//    }
 
     public int getArtistPopularity() {
         return artistPopularity;
@@ -36,6 +52,14 @@ public class Artist {
 
     public void setArtistPopularity(int artistPopularity) {
         this.artistPopularity = artistPopularity;
+    }
+
+    public Double getArtistFollowers() {
+        return artistFollowers;
+    }
+
+    public void setArtistFollowers(Double artistFollowers) {
+        this.artistFollowers = artistFollowers;
     }
 
     public int getArtistId() {
@@ -70,29 +94,29 @@ public class Artist {
         this.artistSpotifyId = artistSpotifyId;
     }
 
-    public String getArtistType() {
-        return artistType;
-    }
-
-    public void setArtistType(String artistType) {
-        this.artistType = artistType;
-    }
-
-    public Double getArtistListeners() {
-        return artistListeners;
-    }
-
-    public void setArtistListeners(Double artistListeners) {
-        this.artistListeners = artistListeners;
-    }
-
-    public Double getArtistPlaycount() {
-        return artistPlaycount;
-    }
-
-    public void setArtistPlaycount(Double artistPlaycount) {
-        this.artistPlaycount = artistPlaycount;
-    }
+//    public String getArtistType() {
+//        return artistType;
+//    }
+//
+//    public void setArtistType(String artistType) {
+//        this.artistType = artistType;
+//    }
+//
+//    public Double getArtistListeners() {
+//        return artistListeners;
+//    }
+//
+//    public void setArtistListeners(Double artistListeners) {
+//        this.artistListeners = artistListeners;
+//    }
+//
+//    public Double getArtistPlaycount() {
+//        return artistPlaycount;
+//    }
+//
+//    public void setArtistPlaycount(Double artistPlaycount) {
+//        this.artistPlaycount = artistPlaycount;
+//    }
 
 
 }

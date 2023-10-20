@@ -50,13 +50,16 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
 
     @Override
     public Artist add(Artist artist) {
-        final String sql = "insert into artist (artist_name, artist_id_mb, artist_id_spot) values (?,?,?);";
+        final String sql = "insert into artist (artist_id_spot, artist_name, artistPopularity, artistFollowers, artist_id_mb) values (?,?,?);";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, artist.getArtistName());
-            ps.setString(2, artist.getArtistMbid());
-            ps.setString(3, artist.getArtistSpotifyId());
+            ps.setString(1, artist.getArtistSpotifyId());
+            ps.setString(2, artist.getArtistName());
+            ps.setInt(3, artist.getArtistPopularity());
+            ps.setDouble(4, artist.getArtistFollowers());
+            ps.setString(5, artist.getArtistMbid());
+
             return ps;
         }, keyHolder);
         if (rowsAffected <= 0) {

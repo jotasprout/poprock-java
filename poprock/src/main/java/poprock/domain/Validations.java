@@ -1,4 +1,4 @@
-package learn.field_agent.domain;
+package poprock.domain;
 
 public class Validations {
 

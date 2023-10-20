@@ -1,0 +1,7 @@
+String artistType, Double artistListeners, Double artistPlaycount, List<String> artistGenres
+
+        this.artistType = artistType;
+        this.artistListeners = artistListeners;
+        this.artistPlaycount = artistPlaycount;
+
+        this.artistGenres = artistGenres;
