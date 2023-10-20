@@ -58,9 +58,9 @@ public class ArtistService {
             result.addMessage("Artist Name is required", ResultType.INVALID);
         }
 
-        if (Validations.isNullOrBlank(artist.getArtistMbid())) {
-            result.addMessage("Artist Followers is required", ResultType.INVALID);
-        }
+//        if (Validations.isNullOrBlank(artist.getArtistMbid())) {
+//            result.addMessage("Artist Followers is required", ResultType.INVALID);
+//        }
 
         if (Validations.isNullOrBlank(artist.getArtistSpotifyId())) {
             result.addMessage("Spotify ID is required", ResultType.INVALID);

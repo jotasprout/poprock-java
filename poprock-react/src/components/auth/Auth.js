@@ -13,16 +13,6 @@ export default function Auth(){
     const [token, setToken] = useState("");
     const [searchKey, setSearchKey] = useState("");
     const [artists, setArtists] = useState([]);
-    const [artist, setArtist] = useState([]);
-
-    const INITIAL_ARTIST = {
-        artistId: 0,
-        artistSpotifyId: "",
-        artistName: "",
-        artistPopularity: "",
-        artistFollowers: "",
-        artistMbid: "",
-    };
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -60,14 +50,25 @@ export default function Auth(){
         console.log(data.artists);
     }
 
+    function grabFollowers(artist){
+        let newFollowers = artist.followers.total;
+        // console.log(newFollowers);
+        return newFollowers;
+    }
+
     const renderArtists = () => {
         return artists.map(artist => (
+
+            // let artistFollowers = artist.followers.total;
+
             <div key={artist.id}>
                 <Link onClick={(e) => addArtist(artist)}>
                     {artist.images.length ? <img width={"50%"} src={artist.images[0].url} alt=""/> : <div>No Image</div>}
                     <p>
-                        {artist.name}<br />
-                        {artist.id}
+                        <strong>Artist: </strong>{artist.name}<br />
+                        <strong>Spotify ID: </strong>{artist.id}<br />
+                        <strong>Followers: </strong>{grabFollowers(artist)}<br />
+                        <strong>Popularity: </strong>{artist.popularity}
                     </p>
                 </Link>
             </div>
@@ -78,13 +79,26 @@ export default function Auth(){
     const [errors, setErrors] = useState([]);
     
     function addArtist(artist){
+
+        const artistRequestBody = {
+            artistId: 0,
+            artistSpotifyId: artist.id,
+            artistName: artist.name,
+            artistPopularity: artist.popularity,
+            // artistFollowers: "",
+            // artistMbid: "",
+        };
+
         console.log(artist);
+        console.log(artistRequestBody);
+        // artist.followers = grabFollowers(artist);
+        // console.log(artist);
 		fetch(`http://localhost:8080/api/artist`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(artist),
+			body: JSON.stringify(artistRequestBody),
 		})
 			.then(res => {
 				if (res.ok) {

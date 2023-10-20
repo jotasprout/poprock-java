@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class ArtistJdbcTemplateRepositoryTest {
 
-    final static int NEXT_ID = 13;
+    final static int NEXT_ID = 14;
 
     @Autowired
     ArtistJdbcTemplateRepository repo;
@@ -64,6 +64,8 @@ public class ArtistJdbcTemplateRepositoryTest {
         Artist artist = new Artist();
         artist.setArtistName("Lady GaGa");
         artist.setArtistMbid("650e7db6-b795-4eb5-a702-5ea2fc46c848");
+//        artist.setArtistFollowers(28327030);
+        artist.setArtistPopularity(83);
         artist.setArtistSpotifyId("1HY2Jd0NmPuamShAr6KMms");
         return artist;
     }

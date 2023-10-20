@@ -32,6 +32,7 @@ public class ArtistController {
 
     @PostMapping
     public ResponseEntity<Object> add(@RequestBody Artist artist) {
+
         Result<Artist> result = service.add(artist);
         if (result.isSuccess()) {
             return new ResponseEntity<>(result.getPayload(), HttpStatus.CREATED);

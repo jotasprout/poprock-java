@@ -119,4 +119,28 @@ public class Artist {
 //    }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Artist artist)) return false;
+
+        if (getArtistId() != artist.getArtistId()) return false;
+        if (getArtistPopularity() != artist.getArtistPopularity()) return false;
+        if (!getArtistSpotifyId().equals(artist.getArtistSpotifyId())) return false;
+        if (!getArtistName().equals(artist.getArtistName())) return false;
+        if (getArtistFollowers() != null ? !getArtistFollowers().equals(artist.getArtistFollowers()) : artist.getArtistFollowers() != null)
+            return false;
+        return getArtistMbid() != null ? getArtistMbid().equals(artist.getArtistMbid()) : artist.getArtistMbid() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getArtistId();
+        result = 31 * result + getArtistSpotifyId().hashCode();
+        result = 31 * result + getArtistName().hashCode();
+        result = 31 * result + getArtistPopularity();
+        result = 31 * result + (getArtistFollowers() != null ? getArtistFollowers().hashCode() : 0);
+        result = 31 * result + (getArtistMbid() != null ? getArtistMbid().hashCode() : 0);
+        return result;
+    }
 }
