@@ -6,6 +6,7 @@ public class Artist {
 
     private int artistId;
     private String artistSpotifyId;
+    private String artistArtFilename;
     private String artistName;
     private int artistPopularity;
     private int artistFollowers;
@@ -14,6 +15,7 @@ public class Artist {
     private int artistListeners;
     private int artistPlaycount;
 //    private List<String> artistGenres;
+
 
     @Override
     public boolean equals(Object o) {
@@ -26,6 +28,8 @@ public class Artist {
         if (getArtistListeners() != artist.getArtistListeners()) return false;
         if (getArtistPlaycount() != artist.getArtistPlaycount()) return false;
         if (!getArtistSpotifyId().equals(artist.getArtistSpotifyId())) return false;
+        if (getArtistArtFilename() != null ? !getArtistArtFilename().equals(artist.getArtistArtFilename()) : artist.getArtistArtFilename() != null)
+            return false;
         if (!getArtistName().equals(artist.getArtistName())) return false;
         if (getArtistMbid() != null ? !getArtistMbid().equals(artist.getArtistMbid()) : artist.getArtistMbid() != null)
             return false;
@@ -36,6 +40,7 @@ public class Artist {
     public int hashCode() {
         int result = getArtistId();
         result = 31 * result + getArtistSpotifyId().hashCode();
+        result = 31 * result + (getArtistArtFilename() != null ? getArtistArtFilename().hashCode() : 0);
         result = 31 * result + getArtistName().hashCode();
         result = 31 * result + getArtistPopularity();
         result = 31 * result + getArtistFollowers();
@@ -46,13 +51,22 @@ public class Artist {
         return result;
     }
 
-    public Artist(int artistId, String artistSpotifyId, String artistName, int artistPopularity, int artistFollowers, String artistMbid) {
+    public String getArtistArtFilename() {
+        return artistArtFilename;
+    }
+
+    public void setArtistArtFilename(String artistArtFilename) {
+        this.artistArtFilename = artistArtFilename;
+    }
+
+    public Artist(int artistId, String artistSpotifyId, String artistName, int artistPopularity, int artistFollowers, String artistMbid, String artistArtFilename) {
         this.artistId = artistId;
         this.artistSpotifyId = artistSpotifyId;
         this.artistName = artistName;
         this.artistPopularity = artistPopularity;
         this.artistFollowers = artistFollowers;
         this.artistMbid = artistMbid;
+        this.artistArtFilename = artistArtFilename;
     }
 
     public Artist(int artistId, String artistMbid) {
@@ -63,6 +77,15 @@ public class Artist {
     public Artist(String artistName, String artistSpotifyId) {
         this.artistName = artistName;
         this.artistSpotifyId = artistSpotifyId;
+    }
+
+    public Artist(int artistId, String artistSpotifyId, String artistName, int artistPopularity, int artistFollowers, String artistArtFilename) {
+        this.artistId = artistId;
+        this.artistSpotifyId = artistSpotifyId;
+        this.artistName = artistName;
+        this.artistPopularity = artistPopularity;
+        this.artistFollowers = artistFollowers;
+        this.artistArtFilename = artistArtFilename;
     }
 
     public Artist(){

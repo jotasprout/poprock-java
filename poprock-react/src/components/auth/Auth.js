@@ -47,7 +47,7 @@ export default function Auth(){
         })
     
         setArtists(data.artists.items)
-        // console.log(data.artists);
+        console.log(data.artists);
     }
 
     function grabFollowers(artist){
@@ -86,13 +86,14 @@ export default function Auth(){
             artistName: artist.name,
             artistPopularity: artist.popularity,
             artistFollowers: grabFollowers(artist),
+            artistArtFilename: artist.images[0].url
             // artistMbid: "",
         };
 
         console.log(artist);
         console.log(artistRequestBody);
         //artistRequestBody.followers = grabFollowers(artist);
-        //console.log(artist);
+        console.log(artist);
 		fetch(`http://localhost:8080/api/artist`, {
 			method: 'POST',
 			headers: {

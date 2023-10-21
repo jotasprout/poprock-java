@@ -3,14 +3,25 @@ import { Link } from "react-router-dom";
 
 export default function ArtistCard({artist}){
 
+    function phCheck(imgFileName){
+        switch(imgFileName){
+            case "image-ph.jpg":
+                imgFileName = imageph;
+                break;
+            default:
+                imgFileName = imgFileName;
+        }
+        return imgFileName;
+    }
+
     return (
         <div key={artist.artistId} className='col'>
             <div className='card h-100'>
                 <div>
                     <img 
                     className='card-img-top'
-                    style={{height: '250px', objectFit: 'cover'}}
-                    src={imageph} />
+                    style={{width: '100%', objectFit: 'cover'}}
+                    src={`${phCheck(artist.artistArtFilename)}`} />
                 </div>
                 <div className='card-body'>
                     <h1 className='card-title fs-4'>{artist.artistName}</h1>

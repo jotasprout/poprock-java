@@ -31,7 +31,11 @@ export default function Navbar() {
                                 Tracks
                             </NavLink>
                         </li>
-
+                        <li className='nav-item'>
+                            <NavLink className='nav-link' to='/force'>
+                                Force
+                            </NavLink>
+                        </li>
                         {/* <li className='nav-item'>
                             <NavLink className='nav-link' to='/tracks'>
                                 Logout

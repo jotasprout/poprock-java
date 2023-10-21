@@ -18,6 +18,8 @@ import AlbumForm from "./components/album/AlbumForm";
 import ArtistProfile from "./components/artist/ArtistProfile";
 import AlbumProfile from "./components/album/AlbumProfile";
 
+import Relations from './components/relation/Relations';
+
 import NotFound from "./components/NotFound";
 import Error from './components/errors/Error';
 
@@ -48,6 +50,8 @@ export default function App() {
 
             <Route path='/artists/profile/:artistId' element={<ArtistProfile />} />
             <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
+
+            <Route path='/force' element={<Relations />} />
 
             <Route path='*' element={<NotFound />} />
 

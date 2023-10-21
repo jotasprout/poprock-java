@@ -26,7 +26,7 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
     }
     @Override
     public List<Artist> findAll() {
-        final String sql = "select artist_id, artist_name, artist_art_filename, artist_id_mb, artist_id_spot, artist_followers, artist_listeners, artist_pop "
+        final String sql = "select artist_id, artist_name, artist_art_filename, artist_id_mb, artist_id_spot, artist_followers, artist_listeners, artist_pop, artist_art_filename "
                 + "from artist;";
         return jdbcTemplate.query(sql, new ArtistMapper());
     }
@@ -35,7 +35,7 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
     @Transactional
     public Artist findById(int artistId) {
 
-        final String sql = "select artist_id, artist_name, artist_id_mb, artist_id_spot, artist_followers, artist_listeners, artist_pop "
+        final String sql = "select artist_id, artist_name, artist_id_mb, artist_id_spot, artist_followers, artist_listeners, artist_pop, artist_art_filename "
                 + "from artist "
                 + "where artist_id = ?;";
 
@@ -55,9 +55,10 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
         HashMap<String, Object> args = new HashMap<>();
         args.put("artist_id_spot", artist.getArtistSpotifyId());
         args.put("artist_name", artist.getArtistName());
-        args.put("artist_popularity", artist.getArtistPopularity());
-        args.put("artist_listeners", artist.getArtistListeners());
+        args.put("artist_pop", artist.getArtistPopularity());
+        args.put("artist_followers", artist.getArtistFollowers());
         args.put("artist_id_mb", artist.getArtistMbid());
+        args.put("artist_art_filename", artist.getArtistArtFilename());
 
         int artistId = insert.executeAndReturnKey(args).intValue();
         artist.setArtistId(artistId);
