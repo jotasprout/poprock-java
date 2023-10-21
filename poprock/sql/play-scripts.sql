@@ -10,6 +10,7 @@ call set_known_good_state();
 	INSERT INTO artist (artist_id_spot, artist_name) VALUES
 		('0oSGxfWSnnOXhD2fKuz2Gy', 'David Bowie');
 
+select artist_name from artist where artist_id = 5;
 select * from artist;
 select * from album;
 select * from song;

@@ -44,7 +44,7 @@ public class ArtistService {
     }
 
     public Artist findById(int artistId) {
-        return null;
+        return repo.findById((artistId));
     }
 
     private Result<Artist> validate(Artist artist) {

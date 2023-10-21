@@ -8,15 +8,45 @@ public class Artist {
     private String artistSpotifyId;
     private String artistName;
     private int artistPopularity;
-    private Double artistFollowers;
+    private int artistFollowers;
     private String artistMbid;
-
-//    private String artistType;
-//    private Double artistListeners;
-//    private Double artistPlaycount;
+    private String artistType;
+    private int artistListeners;
+    private int artistPlaycount;
 //    private List<String> artistGenres;
 
-    public Artist(int artistId, String artistSpotifyId, String artistName, int artistPopularity, Double artistFollowers, String artistMbid) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Artist artist)) return false;
+
+        if (getArtistId() != artist.getArtistId()) return false;
+        if (getArtistPopularity() != artist.getArtistPopularity()) return false;
+        if (getArtistFollowers() != artist.getArtistFollowers()) return false;
+        if (getArtistListeners() != artist.getArtistListeners()) return false;
+        if (getArtistPlaycount() != artist.getArtistPlaycount()) return false;
+        if (!getArtistSpotifyId().equals(artist.getArtistSpotifyId())) return false;
+        if (!getArtistName().equals(artist.getArtistName())) return false;
+        if (getArtistMbid() != null ? !getArtistMbid().equals(artist.getArtistMbid()) : artist.getArtistMbid() != null)
+            return false;
+        return getArtistType() != null ? getArtistType().equals(artist.getArtistType()) : artist.getArtistType() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getArtistId();
+        result = 31 * result + getArtistSpotifyId().hashCode();
+        result = 31 * result + getArtistName().hashCode();
+        result = 31 * result + getArtistPopularity();
+        result = 31 * result + getArtistFollowers();
+        result = 31 * result + (getArtistMbid() != null ? getArtistMbid().hashCode() : 0);
+        result = 31 * result + (getArtistType() != null ? getArtistType().hashCode() : 0);
+        result = 31 * result + getArtistListeners();
+        result = 31 * result + getArtistPlaycount();
+        return result;
+    }
+
+    public Artist(int artistId, String artistSpotifyId, String artistName, int artistPopularity, int artistFollowers, String artistMbid) {
         this.artistId = artistId;
         this.artistSpotifyId = artistSpotifyId;
         this.artistName = artistName;
@@ -54,11 +84,11 @@ public class Artist {
         this.artistPopularity = artistPopularity;
     }
 
-    public Double getArtistFollowers() {
+    public int getArtistFollowers() {
         return artistFollowers;
     }
 
-    public void setArtistFollowers(Double artistFollowers) {
+    public void setArtistFollowers(int artistFollowers) {
         this.artistFollowers = artistFollowers;
     }
 
@@ -94,53 +124,30 @@ public class Artist {
         this.artistSpotifyId = artistSpotifyId;
     }
 
-//    public String getArtistType() {
-//        return artistType;
-//    }
-//
-//    public void setArtistType(String artistType) {
-//        this.artistType = artistType;
-//    }
-//
-//    public Double getArtistListeners() {
-//        return artistListeners;
-//    }
-//
-//    public void setArtistListeners(Double artistListeners) {
-//        this.artistListeners = artistListeners;
-//    }
-//
-//    public Double getArtistPlaycount() {
-//        return artistPlaycount;
-//    }
-//
-//    public void setArtistPlaycount(Double artistPlaycount) {
-//        this.artistPlaycount = artistPlaycount;
-//    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Artist artist)) return false;
-
-        if (getArtistId() != artist.getArtistId()) return false;
-        if (getArtistPopularity() != artist.getArtistPopularity()) return false;
-        if (!getArtistSpotifyId().equals(artist.getArtistSpotifyId())) return false;
-        if (!getArtistName().equals(artist.getArtistName())) return false;
-        if (getArtistFollowers() != null ? !getArtistFollowers().equals(artist.getArtistFollowers()) : artist.getArtistFollowers() != null)
-            return false;
-        return getArtistMbid() != null ? getArtistMbid().equals(artist.getArtistMbid()) : artist.getArtistMbid() == null;
+    public String getArtistType() {
+        return artistType;
     }
 
-    @Override
-    public int hashCode() {
-        int result = getArtistId();
-        result = 31 * result + getArtistSpotifyId().hashCode();
-        result = 31 * result + getArtistName().hashCode();
-        result = 31 * result + getArtistPopularity();
-        result = 31 * result + (getArtistFollowers() != null ? getArtistFollowers().hashCode() : 0);
-        result = 31 * result + (getArtistMbid() != null ? getArtistMbid().hashCode() : 0);
-        return result;
+    public void setArtistType(String artistType) {
+        this.artistType = artistType;
     }
+
+    public int getArtistListeners() {
+        return artistListeners;
+    }
+
+    public void setArtistListeners(int artistListeners) {
+        this.artistListeners = artistListeners;
+    }
+
+    public int getArtistPlaycount() {
+        return artistPlaycount;
+    }
+
+    public void setArtistPlaycount(int artistPlaycount) {
+        this.artistPlaycount = artistPlaycount;
+    }
+
+
+
 }

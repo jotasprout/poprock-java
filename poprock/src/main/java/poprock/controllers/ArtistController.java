@@ -27,6 +27,9 @@ public class ArtistController {
 
     @GetMapping("/{artistId}")
     public Artist findById(@PathVariable int artistId) {
+//        if (service.findById(artistId) == null) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
         return service.findById(artistId);
     }
 

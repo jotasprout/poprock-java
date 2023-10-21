@@ -21,7 +21,7 @@ export default function ArtistList(){
     return (
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
                 {artists.map(artist => {
-                    console.log(artist);
+                    // console.log(artist);
                     return <ArtistCard artist={artist} key={artist.id}/>
                 })}
             </div>

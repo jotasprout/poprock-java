@@ -6,6 +6,8 @@ create table artist (
     artist_id int primary key auto_increment,
     artist_name varchar(100),
     artist_id_spot varchar(50),
+    artist_pop int,
+    artist_listeners int,
     artist_id_mb varchar(100),
     artist_type varchar(10),
     artist_art_filename varchar(255) DEFAULT NULL
@@ -14,18 +16,28 @@ create table artist (
 create table artist_popularity (
     pop_artist_id int primary key auto_increment,
     pop_artist_id_spot varchar(50),
+    pop_artist_pop int,
     pop_artist_date date NOT NULL default (CURRENT_DATE)
+);
+
+create table artist_followers (
+    followers_artist_id int primary key auto_increment,
+    followers_artist_id_spot varchar(50),
+    followers_artist_followers int,
+    followers_artist_date date NOT NULL default (CURRENT_DATE)
 );
 
 create table artist_listeners (
     listeners_artist_id int primary key auto_increment,
     listeners_artist_id_mb varchar(100),
+    listeners_artist_listeners int,
     listeners_artist_date date NOT NULL default (CURRENT_DATE)
 );
 
 create table artist_playcount (
     playcount_artist_id int primary key auto_increment,
     playcount_artist_id_mb varchar(100),
+    playcount_artist_playcount int,
     playcount_artist_date date NOT NULL default (CURRENT_DATE)
 );
 
@@ -49,18 +61,21 @@ CREATE TABLE album (
 create table album_popularity (
     pop_album_id int primary key auto_increment,
     pop_album_id_spot varchar(50),
+    pop_album_pop int,
     pop_album_date date NOT NULL default (CURRENT_DATE)
 );
 
 create table album_listeners (
     listeners_album_id int primary key auto_increment,
     listeners_album_id_mb varchar(100),
+    listeners_album_listeners int,
     listeners_album_date date NOT NULL default (CURRENT_DATE)
 );
 
 create table album_playcount (
     playcount_album_id int primary key auto_increment,
     playcount_album_id_mb varchar(100),
+    playcount_album_playcount int,
     playcount_album_date date NOT NULL default (CURRENT_DATE)
 );
 
@@ -78,18 +93,21 @@ CREATE TABLE track (
 create table track_popularity (
     pop_track_id int primary key auto_increment,
     pop_track_id_spot varchar(50),
+    pop_track_pop int,
     pop_track_date date NOT NULL default (CURRENT_DATE)
 );
 
 create table track_listeners (
     listeners_track_id int primary key auto_increment,
     listeners_track_id_mb varchar(100),
+    listeners_track_listeners int,
     listeners_track_date date NOT NULL default (CURRENT_DATE)
 );
 
 create table track_playcount (
     playcount_track_id int primary key auto_increment,
     playcount_track_id_mb varchar(100),
+    playcount_track_playcount int,
     playcount_track_date date NOT NULL default (CURRENT_DATE)
 );
 
@@ -134,6 +152,8 @@ begin
 
 	delete from track_popularity;
     alter table track_popularity auto_increment = 1;
+--     delete from track_followers;
+--     alter table track_followers auto_increment = 1;
     delete from track_listeners;
     alter table track_listeners auto_increment = 1;
     delete from track_playcount;
@@ -143,6 +163,8 @@ begin
 
 	delete from album_popularity;
     alter table album_popularity auto_increment = 1;
+--     delete from album_followers;
+--     alter table album_followers auto_increment = 1;
     delete from album_listeners;
     alter table album_listeners auto_increment = 1;
     delete from album_playcount;
@@ -152,6 +174,8 @@ begin
     
     delete from artist_popularity;
     alter table artist_popularity auto_increment = 1;
+--     delete from artist_followers;
+--     alter table artist_followers auto_increment = 1;
     delete from artist_listeners;
     alter table artist_listeners auto_increment = 1;
     delete from artist_playcount;

@@ -47,7 +47,7 @@ export default function Auth(){
         })
     
         setArtists(data.artists.items)
-        console.log(data.artists);
+        // console.log(data.artists);
     }
 
     function grabFollowers(artist){
