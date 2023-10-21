@@ -26,7 +26,7 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
     }
     @Override
     public List<Artist> findAll() {
-        final String sql = "select artist_id, artist_name, artist_art_filename, artist_id_mb, artist_id_spot "
+        final String sql = "select artist_id, artist_name, artist_art_filename, artist_id_mb, artist_id_spot, artist_followers, artist_listeners, artist_pop "
                 + "from artist;";
         return jdbcTemplate.query(sql, new ArtistMapper());
     }
@@ -35,7 +35,7 @@ public class ArtistJdbcTemplateRepository implements ArtistRepo {
     @Transactional
     public Artist findById(int artistId) {
 
-        final String sql = "select artist_id, artist_name, artist_id_mb, artist_id_spot "
+        final String sql = "select artist_id, artist_name, artist_id_mb, artist_id_spot, artist_followers, artist_listeners, artist_pop "
                 + "from artist "
                 + "where artist_id = ?;";
 

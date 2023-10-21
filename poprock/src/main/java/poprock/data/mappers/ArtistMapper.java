@@ -14,9 +14,10 @@ public class ArtistMapper implements RowMapper<Artist> {
         artist.setArtistName(resultSet.getString("artist_name"));
         artist.setArtistMbid(resultSet.getString("artist_id_mb"));
         artist.setArtistSpotifyId(resultSet.getString("artist_id_spot"));
-        artist.setArtistPlaycount(resultSet.getInt("artistPlaycount"));
-        artist.setArtistListeners(resultSet.getInt("artistListeners"));
-        artist.setArtistPopularity(resultSet.getInt("artistPopularity"));
+        artist.setArtistFollowers(resultSet.getInt("artist_followers"));
+//        artist.setArtistPlaycount(resultSet.getInt("artistPlaycount"));
+        artist.setArtistListeners(resultSet.getInt("artist_listeners"));
+        artist.setArtistPopularity(resultSet.getInt("artist_pop"));
 
         return artist;
     }

@@ -14,7 +14,19 @@ GET {{url}}/artist/5 HTTP/1.1
 
 ###
 
-PUT {{url}}/agent/2 HTTP/1.1
+POST {{url}}/artist/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "artistId": 0,
+    "artistName": "Iron Maiden",
+    "artistFollowers": 8582412,
+    "artistPopularity": 71,
+    "artistSpotifyId": "6mdiAmATAx73kdxrNrnlao"
+}
+
+###
+PUT {{url}}/artist/2 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -24,4 +36,4 @@ Content-Type: application/json
 
 ###
 
-DELETE {{url}}/agent/14 HTTP/1.1
+DELETE {{url}}/artist/14 HTTP/1.1

@@ -8,6 +8,7 @@ create table artist (
     artist_id_spot varchar(50),
     artist_pop int,
     artist_listeners int,
+    artist_followers int,
     artist_id_mb varchar(100),
     artist_type varchar(10),
     artist_art_filename varchar(255) DEFAULT NULL

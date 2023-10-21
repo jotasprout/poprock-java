@@ -85,14 +85,14 @@ export default function Auth(){
             artistSpotifyId: artist.id,
             artistName: artist.name,
             artistPopularity: artist.popularity,
-            // artistFollowers: "",
+            artistFollowers: grabFollowers(artist),
             // artistMbid: "",
         };
 
         console.log(artist);
         console.log(artistRequestBody);
-        // artist.followers = grabFollowers(artist);
-        // console.log(artist);
+        //artistRequestBody.followers = grabFollowers(artist);
+        //console.log(artist);
 		fetch(`http://localhost:8080/api/artist`, {
 			method: 'POST',
 			headers: {
