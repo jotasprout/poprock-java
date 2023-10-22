@@ -7,14 +7,25 @@ const INITIAL_ARTIST = {
     artistName: "",
     artistPopularity: "",
     artistFollowers: "",
+    artistArtFilename: ""
 };
 
 export default function ArtistProfile(){
 
+    function phCheck(imgFileName){
+        switch(imgFileName){
+            case "image-ph.jpg":
+                imgFileName = imageph;
+                break;
+            default:
+                imgFileName = imgFileName;
+        }
+        return imgFileName;
+    }
+
     const {artistId} = useParams();
     const [artist, setArtist] = useState(INITIAL_ARTIST);
     const navigate = useNavigate();
-    // const locationData = data.locations.find((item) => item.id == locationId);
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/artist/${artistId}`)
@@ -39,12 +50,23 @@ export default function ArtistProfile(){
 
     return (
         <>
-            <h1 className='card-title fs-4'>{artist.artistName}</h1>
+            <h1>{artist.artistName}</h1>
+            <img 
+                    // className='card-img-top'
+                    // style={{width: '100%'}}
+                    src={`${phCheck(artist.artistArtFilename)}`} />
             <p>
+            <strong>Spotify ID:</strong> {artist.artistSpotifyId}
+                <br />
+                <strong>MusicBrainz ID:</strong> {artist.artistMbid}
+                <br />
                 <strong>Popularity:</strong> {artist.artistPopularity}
                 <br />
                 <strong>Listeners:</strong> {artist.artistListeners}
-            </p>
+                <br />
+                <strong>Followers:</strong> {artist.artistFollowers}
+                <br />
+                <strong>Artist Art:</strong> {artist.artistArtFilename}</p>
 
         </>
     );

@@ -4,16 +4,26 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const INITIAL_ARTIST = {
 	artistId: 0,
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    dob: "",
-    heightInInches: ""
+    artistName: "",
+    artistSpotifyId: "",
+    artistArtFilename: "",
+    artistMbid: ""
 };
 
 // TODO Add Select Menu for Security Clearance
 
 export default function ArtistForm() {
+
+    function mbidCheck(artistMbid){
+        switch(artistMbid){
+            case null:
+                artistMbid = "none";
+                break;
+            default:
+                artistMbid = artistMbid;
+        }
+        return artistMbid;
+    }
 
     const [artist, setArtist] = useState(INITIAL_ARTIST);
 	const navigate = useNavigate(); 
@@ -44,12 +54,13 @@ export default function ArtistForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
+        updateArtist();
 
-        if (artist.artistId > 0){
-            updateArtist();
-        } else {
-            addArtist();
-        }
+        // if (artist.artistId > 0){
+        //     updateArtist();
+        // } else {
+        //     addArtist();
+        // }
     }
 
 	function updateArtist() {
@@ -84,63 +95,57 @@ export default function ArtistForm() {
 
     // TODO Copy lines 79-81 above to similar code in other components
 
-    function addArtist() {
-		fetch(`http://localhost:8080/api/artist`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(artist),
-		})
-			.then(res => {
-				if (res.ok) {
-					navigate(`/artists`);
-				} else if (res.status === 400) {
+    // function addArtist() {
+	// 	fetch(`http://localhost:8080/api/artist`, {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify(artist),
+	// 	})
+	// 		.then(res => {
+	// 			if (res.ok) {
+	// 				navigate(`/artists`);
+	// 			} else if (res.status === 400) {
 
-					return res.json();
-				} else {
-					return Promise.reject(
-						new Error(`Unexpected status code: ${res.status}`)
-					);
-				}
-			})
-			.then(setErrors)
-			.catch(console.error); 
-	}
+	// 				return res.json();
+	// 			} else {
+	// 				return Promise.reject(
+	// 					new Error(`Unexpected status code: ${res.status}`)
+	// 				);
+	// 			}
+	// 		})
+	// 		.then(setErrors)
+	// 		.catch(console.error); 
+	// }
 
     return (
         <>
-            <h1>{artist.artistId > 0 ? 'Update' : 'Add'}</h1>
-
+            {/* <h1>{artist.artistName > 0 ? 'Update' : 'Add'}</h1> */}
+            <h1>Update {artist.artistName}</h1>
             <form onSubmit={handleSubmit}>
                 <div className="row mb-3">
                     <div className="col">
-                        <label className="form-label" htmlFor="firstName">First Name</label>
-                        <input id="firstName" name="firstName" type="text" className="form-control" required
-                            onChange={handleChange} value={artist.firstName} />
-                    </div>
-                    <div className="col">
-                        <label className="form-label" htmlFor="middleName">Middle Name</label>
-                        <input id="middleName" name="middleName" type="text" className="form-control"
-                            onChange={handleChange} value={artist.middleName} />
+                        <label className="form-label" htmlFor="artistName">First Name</label>
+                        <input id="artistName" name="artistName" type="text" className="form-control" required
+                            onChange={handleChange} value={artist.artistName} />
                     </div>
                 </div>
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="lastName">Last Name</label>
-                    <input id="lastName" name="lastName" type="text" className="form-control" required
-                        onChange={handleChange} value={artist.lastName} />
+                    <label className="form-label" htmlFor="artistSpotifyId">Spotify ID</label>
+                    <input id="artistSpotifyId" name="artistSpotifyId" type="text" className="form-control" required
+                        onChange={handleChange} value={artist.artistSpotifyId} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="artistMbid">MusicBrainz ID</label>
+                    <input id="artistMbid" name="artistMbid" type="text" className="form-control" required
+                        onChange={handleChange} value={`${mbidCheck(artist.artistMbid)}`} />
                 </div>
                 <div className="row mb-3">
                     <div className="col">
-                        <label className="form-label" htmlFor="dob">DOB</label>
-                        <input id="dob" name="dob" type="date" className="form-control" required
-                            onChange={handleChange} value={artist.dob ?? ''} />
-                    </div>
-                    <div className="col">
-                        <label className="form-label" htmlFor="heightInInches">Height (inches)</label>
-                        <input id="heightInInches" name="heightInInches" type="number" className="form-control"
-                            required min="36" max="96"
-                            onChange={handleChange} value={artist.heightInInches} />
+                        <label className="form-label" htmlFor="artistArtFilename">Artist Art Filename</label>
+                        <input id="artistArtFilename" name="artistArtFilename" type="text" className="form-control"
+                            onChange={handleChange} value={artist.artistArtFilename} />
                     </div>
                 </div>
                 <div className="mb-3">
