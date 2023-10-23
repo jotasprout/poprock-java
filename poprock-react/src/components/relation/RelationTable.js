@@ -2,12 +2,18 @@ import { useEffect, useState } from "react";
 
 export default function RelationTable({artistRels}){
 
-    console.log(artistRels);
+    const [rels, setRels] = useState("");
+    
+    const data = artistRels.relations;
+    // setRels(data);
+    console.log(data);
 
-    const [artistRel, setArtistRel] = useState(artistRels);
+    // 
+    // const [artistRel, setArtistRel] = useState("");
+    // setArtistRels(artistRels);
 
     return (
-        <></>
+        <></> 
             // <table className="table table-striped">
             //     <thead>
             //         <tr>
@@ -36,6 +42,6 @@ export default function RelationTable({artistRels}){
             //         ))}
             //     </tbody>
             // </table >
-        
+       
     );
 }
