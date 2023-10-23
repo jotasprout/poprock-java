@@ -95,30 +95,6 @@ export default function ArtistForm() {
 
     // TODO Copy lines 79-81 above to similar code in other components
 
-    // function addArtist() {
-	// 	fetch(`http://localhost:8080/api/artist`, {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify(artist),
-	// 	})
-	// 		.then(res => {
-	// 			if (res.ok) {
-	// 				navigate(`/artists`);
-	// 			} else if (res.status === 400) {
-
-	// 				return res.json();
-	// 			} else {
-	// 				return Promise.reject(
-	// 					new Error(`Unexpected status code: ${res.status}`)
-	// 				);
-	// 			}
-	// 		})
-	// 		.then(setErrors)
-	// 		.catch(console.error); 
-	// }
-
     return (
         <>
             {/* <h1>{artist.artistName > 0 ? 'Update' : 'Add'}</h1> */}
@@ -126,7 +102,7 @@ export default function ArtistForm() {
             <form onSubmit={handleSubmit}>
                 <div className="row mb-3">
                     <div className="col">
-                        <label className="form-label" htmlFor="artistName">First Name</label>
+                        <label className="form-label" htmlFor="artistName">Artist Name</label>
                         <input id="artistName" name="artistName" type="text" className="form-control" required
                             onChange={handleChange} value={artist.artistName} />
                     </div>

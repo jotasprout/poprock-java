@@ -15,23 +15,9 @@ export default function Relations() {
         if (node.level === 2) {
             return 8
         }
-        // if (node.level === 3) {
-        //     return 'magenta'
-        // }
-        // if (node.level === 4) {
-        //     return 'blue'
-        // }
-        // if (node.level === 5) {
-        //     return 'green'
-        // }
-        // if (node.level === 6) {
-        //     return 'orange'
-        // }
     };
 
     return (
-
-
 
         <ForceGraph3D
             graphData={data}

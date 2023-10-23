@@ -2,6 +2,8 @@ import imageph from '../../img/image-ph.jpg';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import RelationList from '../relation/RelationList';
+
 const INITIAL_ARTIST = {
 	artistId: 0,
     artistName: "",
@@ -24,7 +26,7 @@ export default function ArtistProfile(){
     }
 
     const {artistId} = useParams();
-    const [artist, setArtist] = useState(INITIAL_ARTIST);
+    const [artist, setArtist] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,26 +50,33 @@ export default function ArtistProfile(){
             })
     },[artistId]);
 
+    if (!artist){
+        return null;
+    }
+
     return (
         <>
-            <h1>{artist.artistName}</h1>
-            <img 
-                    // className='card-img-top'
-                    // style={{width: '100%'}}
-                    src={`${phCheck(artist.artistArtFilename)}`} />
-            <p>
-            <strong>Spotify ID:</strong> {artist.artistSpotifyId}
-                <br />
-                <strong>MusicBrainz ID:</strong> {artist.artistMbid}
-                <br />
-                <strong>Popularity:</strong> {artist.artistPopularity}
-                <br />
-                <strong>Listeners:</strong> {artist.artistListeners}
-                <br />
-                <strong>Followers:</strong> {artist.artistFollowers}
-                <br />
-                <strong>Artist Art:</strong> {artist.artistArtFilename}</p>
-
+            <h1>{artist?.artistName}</h1>
+            <div>
+                <img 
+                        // className='card-img-top'
+                        // style={{width: '100%'}}
+                        src={`${phCheck(artist.artistArtFilename)}`} />
+                <p>
+                <strong>Spotify ID:</strong> {artist.artistSpotifyId}
+                    <br />
+                    <strong>MusicBrainz ID:</strong> {artist.artistMbid}
+                    <br />
+                    <strong>Popularity:</strong> {artist.artistPopularity}
+                    <br />
+                    {/* <strong>Listeners:</strong> {artist.artistListeners}
+                    <br /> */}
+                    <strong>Followers:</strong> {artist.artistFollowers}
+                    <br />
+                    <strong>Artist Art:</strong> {artist.artistArtFilename}</p>                
+            </div>
+                
+            <RelationList artist={artist}/>
         </>
     );
 }
