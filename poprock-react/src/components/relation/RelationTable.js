@@ -2,46 +2,46 @@ import { useEffect, useState } from "react";
 
 export default function RelationTable({artistRels}){
 
-    const [rels, setRels] = useState("");
+    // const [rels, setRels] = useState(null);
     
-    const data = artistRels.relations;
-    // setRels(data);
-    console.log(data);
+    const rels = artistRels.relations;
+
+    // if (data){
+    //     setRels(data);
+    // }
+
+    // setRels(await data);
+    // console.log(data);
+    // console.log(artistRels);
+    console.log(rels);
 
     // 
-    const [rel, setRel] = useState("");
+    // const [rel, setRel] = useState("");
     // setArtistRels(artistRels);
 
     return (
-<></>
-            // <table className="table table-striped">
-            //     <thead>
-            //         <tr>
-            //             <th>id</th>
-            //             <th>Name</th>
-            //             <th>MBID</th>
-            //             <th>Type</th>
-            //         </tr>
-            //     </thead>
-            //     <tbody>
-            //         {data.map((artistRel, index) => (
+        <div>
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>MBID</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {rels.map(artistRel => (
 
-            //             <tr key={index}>
-            //                 {/* 
-            //                 <td>
-            //                     <Link to={`/agents/profile/${agent.agentId}`}>
-            //                             {agent.firstName}{agent.middleName ? " " + agent.middleName : ""} {agent.lastName}
-            //                     </Link>
-            //                 </td> */}
-            //                 <td>no id yet</td>
-            //                 <td>{artistRel.artist.name}</td>
-            //                 <td>{artistRel.artist.id}</td>
-
-            //                 <td>{artistRel.type}</td>
-            //             </tr>
-            //         ))}
-            //     </tbody>
-            // </table >
-       
+                        <tr key={artistRel.artist.id}>
+                            <td>no id yet</td>
+                            <td>{artistRel.artist.name}</td>
+                            <td>{artistRel.artist.id}</td>
+                            <td>{artistRel.type}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table >
+       </div>
     );
 }

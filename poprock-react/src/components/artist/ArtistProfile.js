@@ -4,13 +4,13 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import RelationList from '../relation/RelationList';
 
-const INITIAL_ARTIST = {
-	artistId: 0,
-    artistName: "",
-    artistPopularity: "",
-    artistFollowers: "",
-    artistArtFilename: ""
-};
+// const INITIAL_ARTIST = {
+// 	artistId: 0,
+//     artistName: "",
+//     artistPopularity: "",
+//     artistFollowers: "",
+//     artistArtFilename: ""
+// };
 
 export default function ArtistProfile(){
 
