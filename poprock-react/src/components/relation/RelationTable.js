@@ -2,22 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function RelationTable({artistRels}){
 
-    // const [rels, setRels] = useState(null);
-    
     const rels = artistRels.relations;
 
-    // if (data){
-    //     setRels(data);
-    // }
-
-    // setRels(await data);
-    // console.log(data);
-    // console.log(artistRels);
-    console.log(rels);
-
-    // 
-    // const [rel, setRel] = useState("");
-    // setArtistRels(artistRels);
+    if (!artistRels){
+        return null;
+    }
 
     return (
         <div>
@@ -43,5 +32,6 @@ export default function RelationTable({artistRels}){
                 </tbody>
             </table >
        </div>
+
     );
 }

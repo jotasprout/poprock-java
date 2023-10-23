@@ -9,11 +9,11 @@ Authorization: Bearer
 
 ###
 
-GET {{url}}/artists/ HTTP/1.1
+GET {{url}}/artists/5M52tdBnJaKSvOpJGz8mfZ HTTP/1.1
 
 // Gets Black Sabbath release groups
 
 ###
 
-
+GET {{url}}/artists/5M52tdBnJaKSvOpJGz8mfZ/albums?include_groups=album&limit=40&market=US HTTP/1.1
 ###

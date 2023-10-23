@@ -37,3 +37,9 @@ Content-Type: application/json
 ###
 
 DELETE {{url}}/artist/14 HTTP/1.1
+
+###
+
+GET {{url}}/artists/2 HTTP/1.1
+
+###
