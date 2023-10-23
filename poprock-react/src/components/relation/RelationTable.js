@@ -9,11 +9,11 @@ export default function RelationTable({artistRels}){
     console.log(data);
 
     // 
-    // const [artistRel, setArtistRel] = useState("");
+    const [rel, setRel] = useState("");
     // setArtistRels(artistRels);
 
     return (
-        <></> 
+<></>
             // <table className="table table-striped">
             //     <thead>
             //         <tr>
@@ -24,11 +24,11 @@ export default function RelationTable({artistRels}){
             //         </tr>
             //     </thead>
             //     <tbody>
-            //         {artistRels.map(artistRel => (
+            //         {data.map((artistRel, index) => (
 
-                        
-            //             <tr key={artistRel.artist.id}>
-            //                 {/* <td>
+            //             <tr key={index}>
+            //                 {/* 
+            //                 <td>
             //                     <Link to={`/agents/profile/${agent.agentId}`}>
             //                             {agent.firstName}{agent.middleName ? " " + agent.middleName : ""} {agent.lastName}
             //                     </Link>
