@@ -28,8 +28,9 @@ export default function ArtistCard({artist}){
                     <p><strong>Popularity:</strong> {artist.artistPopularity}
                         <br />
                         <strong>Followers:</strong> {artist.artistFollowers}
-                        <br />
-                        <strong>Artist Art:</strong> {artist.artistArtFilename}</p>
+                        {/* <br />
+                        <strong>Artist Art:</strong> {artist.artistArtFilename} */}
+                        </p>
                 </div>
                 <div className='card-footer d-flex justify-content-end'>
                     <Link className='btn btn-outline-success me-2 btn-sm' to={`/artists/profile/${artist.artistId}`}><strong>Profile</strong></Link>

@@ -19,11 +19,15 @@ export default function ArtistList(){
     }, []);
 
     return (
-            <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
+        <div id="artists" className="container">
+            <h1>Artists</h1>
+            <div className='row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4'>
                 {artists.map(artist => {
                     // console.log(artist);
                     return <ArtistCard artist={artist} key={artist.artistId}/>
                 })}
-            </div>
+            </div>            
+        </div>
+
     );
 }

@@ -10,7 +10,7 @@ const INITIAL_ARTIST = {
     artistMbid: ""
 };
 
-// TODO Add Select Menu for Security Clearance
+// TODO Move image and mbid checks to component
 
 export default function ArtistForm() {
 

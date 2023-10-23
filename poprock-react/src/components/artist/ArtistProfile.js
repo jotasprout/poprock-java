@@ -55,13 +55,15 @@ export default function ArtistProfile(){
     }
 
     return (
-        <>
+        <div id="profile" className="container">
             <h1>{artist?.artistName}</h1>
             <div>
                 <img 
                         // className='card-img-top'
                         // style={{width: '100%'}}
-                        src={`${phCheck(artist.artistArtFilename)}`} />
+                        src={`${phCheck(artist.artistArtFilename)}`} 
+                        style={{height: '360px'}}
+                        />
                 <p>
                 <strong>Spotify ID:</strong> {artist.artistSpotifyId}
                     <br />
@@ -72,11 +74,12 @@ export default function ArtistProfile(){
                     {/* <strong>Listeners:</strong> {artist.artistListeners}
                     <br /> */}
                     <strong>Followers:</strong> {artist.artistFollowers}
-                    <br />
-                    <strong>Artist Art:</strong> {artist.artistArtFilename}</p>                
+                    {/* <br />
+                    <strong>Artist Art:</strong> {artist.artistArtFilename} */}
+                    </p>                
             </div>
                 
             <RelationList artist={artist}/>
-        </>
+        </div>
     );
 }

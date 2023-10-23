@@ -118,21 +118,36 @@ export default function Auth(){
 	}
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Spotify Search</h1>
-                <h2></h2>
-                <form onSubmit={searchArtists}>
-                    <input type="text" onChange={e => setSearchKey(e.target.value)}/>
-                    <button type={"submit"}>Search</button>
-                </form>
+        <>
+        <section className="jumbotron text-center">
+        <div className="container">
+        
+            {/* <p>
+                <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p> */}
+            <div className="App">
+                <header className="App-header">
+                    <h1>Spotify Search</h1>
+                    <p className="lead text-muted">Search for an Artist on Spotify.<br />
+                    Click the desired artist among the results to add it.</p>
+                    <form onSubmit={searchArtists}>
+                        <input type="text" onChange={e => setSearchKey(e.target.value)}/>
+                        <button type={"submit"}>Search</button>
+                    </form>
 
-                {renderArtists()}
+                    {renderArtists()}
 
-                {!token ?
-                    <a href={`${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`}>Get Auth Token</a>
-                    : <button onClick={logout}>Logout</button>}
-            </header>
+                    {!token ?
+                        <a href={`${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`}>Get Auth Token</a>
+                        : <button onClick={logout}>Logout</button>}
+                </header>
+            </div> 
         </div>
+    </section>
+
+       
+        </>
+
     );
 }

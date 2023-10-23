@@ -29,35 +29,39 @@ export default function App() {
   return (
     <Router>
         <Header />
-        <Routes>
-            <Route path='/' element={<Landing />} />
+        <main>
+            <Routes>
+                <Route path='/' element={<Landing />} />
 
-            <Route path='/albums' element={<AlbumList />} />
-            <Route path='/artists' element={<ArtistList />} />
-            <Route path='/tracks' element={<TrackList />} />
+                <Route path='/albums' element={<AlbumList />} />
+                <Route path='/artists' element={<ArtistList />} />
+                <Route path='/tracks' element={<TrackList />} />
 
-            {/* <Route path='/artists/delete/:artistId' element={<ArtistDelete />} /> 
-            <Route path='/tracks/delete/:trackId' element={<TrackDelete />} />
-            <Route path='/albums/delete/:albumId' element={<AlbumDelete />} /> */}
+                {/* <Route path='/artists/delete/:artistId' element={<ArtistDelete />} /> 
+                <Route path='/tracks/delete/:trackId' element={<TrackDelete />} />
+                <Route path='/albums/delete/:albumId' element={<AlbumDelete />} /> */}
 
-            <Route path='/tracks/edit/:trackId' element={<TrackForm />} />
-            <Route path='/artists/edit/:artistId' element={<ArtistForm />} />
-            <Route path='/albums/edit/:albumId' element={<AlbumForm />} />
+                <Route path='/tracks/edit/:trackId' element={<TrackForm />} />
+                <Route path='/artists/edit/:artistId' element={<ArtistForm />} />
+                <Route path='/albums/edit/:albumId' element={<AlbumForm />} />
 
-            <Route path='/tracks/add' element={<TrackForm />} />
-            <Route path='/artists/add' element={<ArtistForm />} />
-            <Route path='/albums/add' element={<AlbumForm />} />
+                <Route path='/tracks/add' element={<TrackForm />} />
+                <Route path='/artists/add' element={<ArtistForm />} />
+                <Route path='/albums/add' element={<AlbumForm />} />
 
-            <Route path='/artists/profile/:artistId' element={<ArtistProfile />} />
-            <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
+                <Route path='/artists/profile/:artistId' element={<ArtistProfile />} />
+                <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
 
-            <Route path='/force' element={<Relations />} />
+                <Route path='/force' element={<Relations />} />
 
-            <Route path='*' element={<NotFound />} />
+                <Route path='*' element={<NotFound />} />
 
-            <Route path='/error' element={<Error />} />
+                <Route path='/error' element={<Error />} />
 
-        </Routes>
+            </Routes>   
+
+        </main>
+
     </Router>
   );
 }
