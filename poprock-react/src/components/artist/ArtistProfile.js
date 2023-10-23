@@ -1,6 +1,6 @@
 import imageph from '../../img/image-ph.jpg';
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import RelationList from '../relation/RelationList';
 
@@ -78,7 +78,9 @@ export default function ArtistProfile(){
                     <strong>Artist Art:</strong> {artist.artistArtFilename} */}
                     </p>                
             </div>
-                
+            <div className='card-footer d-flex justify-content-end'>
+                    <Link className='btn btn-primary me-2 btn-sm' to={`/albums/${artist.artistSpotifyId}`}><strong>Get Albums</strong></Link>
+                </div>   
             <RelationList artist={artist}/>
         </div>
     );

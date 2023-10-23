@@ -20,9 +20,9 @@ export default function RelationTable({artistRels}){
                     </tr>
                 </thead>
                 <tbody>
-                    {rels.map(artistRel => (
+                    {rels.map((artistRel, index) => (
 
-                        <tr key={artistRel.artist.id}>
+                        <tr key={index}>
                             <td>no id yet</td>
                             <td>{artistRel.artist.name}</td>
                             <td>{artistRel.artist.id}</td>

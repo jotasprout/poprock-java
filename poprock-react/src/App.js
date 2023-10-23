@@ -33,7 +33,7 @@ export default function App() {
             <Routes>
                 <Route path='/' element={<Landing />} />
 
-                <Route path='/albums' element={<AlbumList />} />
+                <Route path='/albums/:artistId' element={<AlbumList />} />
                 <Route path='/artists' element={<ArtistList />} />
                 <Route path='/tracks' element={<TrackList />} />
 
