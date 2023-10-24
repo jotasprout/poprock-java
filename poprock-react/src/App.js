@@ -1,15 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootswatch/dist/slate/bootstrap.min.css';
+
+// import { SpotifyProvider } from './context/SpotifyContext';
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 
 import TrackList from "./components/track/TrackList";
 import ArtistList from "./components/artist/ArtistList";
 import AlbumList from "./components/album/AlbumList";
-
-// import TrackDelete from "./components/track/TrackDelete";
-// import ArtistDelete from "./components/artist/ArtistDelete";
-// import AlbumDelete from "./components/album/AlbumDelete";
 
 import TrackForm from "./components/track/TrackForm";
 import ArtistForm from "./components/artist/ArtistForm";
@@ -27,41 +25,40 @@ import './App.css';
 
 export default function App() {
   return (
-    <Router>
-        <Header />
-        <main>
-            <Routes>
-                <Route path='/' element={<Landing />} />
+    // <SpotifyProvider>
+        <Router>
+            <Header />
+            <main>
+                <Routes>
+                    <Route path='/' element={<Landing />} />
 
-                <Route path='/albums/:artistId' element={<AlbumList />} />
-                <Route path='/artists' element={<ArtistList />} />
-                <Route path='/tracks' element={<TrackList />} />
+                    <Route path='/albums/:artistId' element={<AlbumList />} />
+                    <Route path='/artists' element={<ArtistList />} />
+                    <Route path='/tracks' element={<TrackList />} />
 
-                {/* <Route path='/artists/delete/:artistId' element={<ArtistDelete />} /> 
-                <Route path='/tracks/delete/:trackId' element={<TrackDelete />} />
-                <Route path='/albums/delete/:albumId' element={<AlbumDelete />} /> */}
+                    <Route path='/tracks/edit/:trackId' element={<TrackForm />} />
+                    <Route path='/artists/edit/:artistId' element={<ArtistForm />} />
+                    <Route path='/albums/edit/:albumId' element={<AlbumForm />} />
 
-                <Route path='/tracks/edit/:trackId' element={<TrackForm />} />
-                <Route path='/artists/edit/:artistId' element={<ArtistForm />} />
-                <Route path='/albums/edit/:albumId' element={<AlbumForm />} />
+                    <Route path='/tracks/add' element={<TrackForm />} />
+                    <Route path='/artists/add' element={<ArtistForm />} />
+                    <Route path='/albums/add' element={<AlbumForm />} />
 
-                <Route path='/tracks/add' element={<TrackForm />} />
-                <Route path='/artists/add' element={<ArtistForm />} />
-                <Route path='/albums/add' element={<AlbumForm />} />
+                    <Route path='/artists/profile/:artistId' element={<ArtistProfile />} />
+                    <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
 
-                <Route path='/artists/profile/:artistId' element={<ArtistProfile />} />
-                <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
+                    <Route path='/force' element={<Relations />} />
 
-                <Route path='/force' element={<Relations />} />
+                    <Route path='*' element={<NotFound />} />
 
-                <Route path='*' element={<NotFound />} />
+                    <Route path='/error' element={<Error />} />
 
-                <Route path='/error' element={<Error />} />
+                </Routes>   
 
-            </Routes>   
+            </main>
 
-        </main>
+        </Router>    
+    // </SpotifyProvider>
 
-    </Router>
   );
 }

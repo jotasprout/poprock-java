@@ -55,7 +55,7 @@ CREATE TABLE album (
     constraint fk_album_artist_id
         foreign key (artist_id)
         references artist(artist_id),
-    year_released int NOT NULL,
+    release_date date NOT NULL,
     album_art_filename varchar(144) DEFAULT NULL
 );
 

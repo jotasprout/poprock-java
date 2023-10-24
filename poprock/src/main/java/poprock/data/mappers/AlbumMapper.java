@@ -16,7 +16,7 @@ public class AlbumMapper implements RowMapper<Album> {
         album.setAlbumSpotifyId(resultSet.getString("album_id_spot"));
         album.setAlbumPopularity(resultSet.getInt("album_pop"));
         album.setAlbumArtFilename(resultSet.getString("album_art_filename"));
-
+        album.setAlbumReleaseDate(resultSet.getString("release_date"));
         return album;
     }
 

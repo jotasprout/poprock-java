@@ -57,6 +57,7 @@ public class AlbumJdbcTemplateRepository implements AlbumRepo {
         args.put("album_name", album.getAlbumName());
         args.put("album_pop", album.getAlbumPopularity());
         args.put("album_art_filename", album.getAlbumArtFilename());
+        args.put("release_date", album.getAlbumReleaseDate());
 
         int albumId = insert.executeAndReturnKey(args).intValue();
         album.setAlbumId(albumId);

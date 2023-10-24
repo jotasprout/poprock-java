@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
+// import SpotifyContext from '../../context/SpotifyContext';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +14,19 @@ export default function Auth(){
     const [token, setToken] = useState("");
     const [searchKey, setSearchKey] = useState("");
     const [artists, setArtists] = useState([]);
+
+    // const {getToken} = useContext(SpotifyContext);
+
+    // const token = useContext(SpotifyContext);
+// console.log(token);
+    // useEffect(() => {
+    //     getToken();
+    // }, [])
+
+    // useEffect(() => {
+    //     let localToken = getToken();
+    //     setToken(localToken);
+    // }, [])
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -141,6 +155,7 @@ export default function Auth(){
                     {!token ?
                         <a href={`${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`}>Get Auth Token</a>
                         : <button onClick={logout}>Logout</button>}
+
                 </header>
             </div> 
         </div>

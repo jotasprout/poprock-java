@@ -1,81 +1,49 @@
 import {useEffect, useState} from 'react';
+import AlbumCard from './AlbumCard';
 
-export default function AlbumList({artistSpotifyId}){
+export default function AlbumList({albumsList}){
 
-    let token = window.localStorage.getItem('token');
-    const [artistSpotifyAlbums, setArtistSpotifyAlbums] = useState([]);
-
-    // const fetchSpotifyAlbumsByArtist = async (e) => {
-    //     e.preventDefault()
-    //     const {data} = await axios.get("https://api.spotify.com/v1/search", {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     })
+    const albums = albumsList.items;
     
-    //     setArtists(data.artists.items)
-    //     console.log(data.artists);
-    // }
+    if (!albums){
+        return null;
+    };
 
-    useEffect(() => {
-        const fetchArtistSpotifyAlbums = async () => {
-            const response = await fetch("https://api.spotify.com/v1/artists/" + artistSpotifyId + "/albums?include_groups=album&limit=40&market=US", {
-                method: 'GET',
-			    headers: {
-				    Authorization: `Bearer ${token}`
-			    }
-            });
-            console.log("is this working");
-
-            if (response.ok) {
-                const data = await response.json();
-                setArtistSpotifyAlbums(data);
-                console.log(data);
-            } else {
-                setArtistSpotifyAlbums([]);
-            }
-        };
-
-        if (artistSpotifyId){
-            fetchArtistSpotifyAlbums();
-        }
-        
-    }, [artistSpotifyId]);
-
-    // function addArtist(artist){
-
-    //     console.log(artist);
-    //     console.log(artistRequestBody);
-    //     //artistRequestBody.followers = grabFollowers(artist);
-    //     console.log(artist);
-	// 	fetch(`https://api.spotify.com/v1/artists/${artistSpotifyId}/albums?include_groups=album&limit=40&market=US`, {
-	// 		method: 'GET',
-	// 		headers: {
-	// 			Authorization: `Bearer ${token}`
-	// 		},
-	// 		body: JSON.stringify(artistRequestBody),
-	// 	})
-	// 		.then(res => {
-	// 			if (res.ok) {
-	// 				navigate(`/albums`);
-	// 			} else if (res.status === 400) {
-
-	// 				return res.json();
-	// 			} else {
-	// 				return Promise.reject(
-	// 					new Error(`Unexpected status code: ${res.status}`)
-	// 				);
-	// 			}
-	// 		})
-	// 		.then(setErrors)
-	// 		.catch(console.error); 
-	// }
+    console.log(albums);
 
     return (
-        <>
-            <div>
-                AlbumList component.
+        <div>
+
+            <div id="albums">
+                <h2>Albums</h2>
+                <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
+                    {albums.map((album, index) => {
+                        // console.log(artist);
+                        return <AlbumCard album={album} key={index}/>
+                    })}
+                </div>            
             </div>
-        </>
+            {/* <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Spotify ID</th>
+                        <th>Art URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {albums.map((album, index) => (
+
+                        <tr key={index}>
+                            <td>no id yet</td>
+                            <td>{album.name}</td>
+                            <td>{album.id}</td>
+                            <td>{album.images[0].url}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table > */}
+       </div>
     );
 }

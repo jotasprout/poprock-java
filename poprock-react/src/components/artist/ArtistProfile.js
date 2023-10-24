@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 
 import RelationList from '../relation/RelationList';
+import AlbumList from '../album/AlbumList';
 
 // const INITIAL_ARTIST = {
 // 	artistId: 0,
@@ -29,6 +30,7 @@ export default function ArtistProfile(){
     }
 
     const {artistId} = useParams();
+
     const [artist, setArtist] = useState(null);
     const navigate = useNavigate();
     const [artistSpotifyAlbums, setArtistSpotifyAlbums] = useState([]);
@@ -58,17 +60,29 @@ export default function ArtistProfile(){
         return null;
     }
 
-    // const fetchSpotifyAlbums = async (e) => {
-    //     e.preventDefault()
-    //     const {data} = await axios.get("https://api.spotify.com/v1/search", {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     })
-    
-    //     setArtistSpotifyAlbums(data)
-    //     console.log(data);
-    // }
+    const fetchSpotifyAlbums = async () => {
+        const response = await fetch("https://api.spotify.com/v1/artists/" + artist.artistSpotifyId + "/albums?include_groups=album&limit=40&market=US", {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        // console.log(response);
+
+        if (response.ok) {
+            const data = await response.json();
+            setArtistSpotifyAlbums(data);
+            // console.log(data);
+        } else {
+            setArtistSpotifyAlbums([]);
+        }
+
+
+    };
+
+    if (artistSpotifyAlbums){
+        console.log(artistSpotifyAlbums);
+    };
 
     return (
         <div id="profile" className="container">
@@ -94,10 +108,12 @@ export default function ArtistProfile(){
                     <strong>Artist Art:</strong> {artist.artistArtFilename} */}
                     </p>                
             </div>
-                {/* <div>
-                    <Link className='btn btn-primary me-2 btn-sm' to={`/albums/${artist.artistSpotifyId}`}><strong>Get Albums</strong></Link>
+                <div>
+                    {/* <Link className='btn btn-primary me-2 btn-sm' to={`/albums/${artist.artistSpotifyId}`}><strong>Get Albums</strong></Link> */}
+
                     <button onClick={fetchSpotifyAlbums}>Get Albums</button>
-                </div>    */}
+                </div>   
+                {artistSpotifyAlbums ? <AlbumList albumsList={artistSpotifyAlbums}/> : <p>no albums</p>}
             <RelationList artist={artist}/>
         </div>
     );
