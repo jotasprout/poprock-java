@@ -3,13 +3,20 @@ package poprock.models;
 public class Relation {
 
     private int relationId;
-    private String relationPrimaryType; /* Is it an 'artist' or 'track' */
+    private String relationName;
+
     private String relationPrimaryMbid;
-    private String relationBegin;
-    private Double relationEnd;
     private String relationArtistMbid; /* Artist related to the 'artist' or 'track' */
     private String relationType; /* 'member of band' or whatever */
     private String relationAttribute;
+
+    public String getRelationName() {
+        return relationName;
+    }
+
+    public void setRelationName(String relationName) {
+        this.relationName = relationName;
+    }
 
     public int getRelationId() {
         return relationId;
@@ -19,36 +26,12 @@ public class Relation {
         this.relationId = relationId;
     }
 
-    public String getRelationPrimaryType() {
-        return relationPrimaryType;
-    }
-
-    public void setRelationPrimaryType(String relationPrimaryType) {
-        this.relationPrimaryType = relationPrimaryType;
-    }
-
     public String getRelationPrimaryMbid() {
         return relationPrimaryMbid;
     }
 
     public void setRelationPrimaryMbid(String relationPrimaryMbid) {
         this.relationPrimaryMbid = relationPrimaryMbid;
-    }
-
-    public String getRelationBegin() {
-        return relationBegin;
-    }
-
-    public void setRelationBegin(String relationBegin) {
-        this.relationBegin = relationBegin;
-    }
-
-    public Double getRelationEnd() {
-        return relationEnd;
-    }
-
-    public void setRelationEnd(Double relationEnd) {
-        this.relationEnd = relationEnd;
     }
 
     public String getRelationArtistMbid() {

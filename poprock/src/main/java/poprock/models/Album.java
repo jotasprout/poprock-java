@@ -9,11 +9,19 @@ public class Album {
     private String albumSpotifyId;
     private String albumCountry;
     private String albumReleaseDate;
-    private Double albumListeners;
-    private Double albumPlaycount;
     private String albumLabel;
     private String albumStatus;
+    private String albumArtFilename;
+
     private int albumPopularity;
+
+    public String getAlbumArtFilename() {
+        return albumArtFilename;
+    }
+
+    public void setAlbumArtFilename(String albumArtFilename) {
+        this.albumArtFilename = albumArtFilename;
+    }
 
     public int getAlbumPopularity() {
         return albumPopularity;
@@ -87,21 +95,6 @@ public class Album {
         this.albumReleaseDate = albumReleaseDate;
     }
 
-    public Double getAlbumListeners() {
-        return albumListeners;
-    }
-
-    public void setAlbumListeners(Double albumListeners) {
-        this.albumListeners = albumListeners;
-    }
-
-    public Double getAlbumPlaycount() {
-        return albumPlaycount;
-    }
-
-    public void setAlbumPlaycount(Double albumPlaycount) {
-        this.albumPlaycount = albumPlaycount;
-    }
 
     public String getAlbumLabel() {
         return albumLabel;

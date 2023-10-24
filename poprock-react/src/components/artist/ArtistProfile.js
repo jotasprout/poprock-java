@@ -1,6 +1,7 @@
 import imageph from '../../img/image-ph.jpg';
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import axios from 'axios';
 
 import RelationList from '../relation/RelationList';
 
@@ -13,6 +14,8 @@ import RelationList from '../relation/RelationList';
 // };
 
 export default function ArtistProfile(){
+
+    let token = window.localStorage.getItem('token');
 
     function phCheck(imgFileName){
         switch(imgFileName){
@@ -28,6 +31,7 @@ export default function ArtistProfile(){
     const {artistId} = useParams();
     const [artist, setArtist] = useState(null);
     const navigate = useNavigate();
+    const [artistSpotifyAlbums, setArtistSpotifyAlbums] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/artist/${artistId}`)
@@ -54,6 +58,18 @@ export default function ArtistProfile(){
         return null;
     }
 
+    // const fetchSpotifyAlbums = async (e) => {
+    //     e.preventDefault()
+    //     const {data} = await axios.get("https://api.spotify.com/v1/search", {
+    //         headers: {
+    //             Authorization: `Bearer ${token}`
+    //         }
+    //     })
+    
+    //     setArtistSpotifyAlbums(data)
+    //     console.log(data);
+    // }
+
     return (
         <div id="profile" className="container">
             <h1>{artist?.artistName}</h1>
@@ -78,9 +94,10 @@ export default function ArtistProfile(){
                     <strong>Artist Art:</strong> {artist.artistArtFilename} */}
                     </p>                
             </div>
-            <div className='card-footer d-flex justify-content-end'>
+                {/* <div>
                     <Link className='btn btn-primary me-2 btn-sm' to={`/albums/${artist.artistSpotifyId}`}><strong>Get Albums</strong></Link>
-                </div>   
+                    <button onClick={fetchSpotifyAlbums}>Get Albums</button>
+                </div>    */}
             <RelationList artist={artist}/>
         </div>
     );

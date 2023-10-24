@@ -8,6 +8,8 @@ export default function RelationTable({artistRels}){
         return null;
     }
 
+    console.log(rels);
+
     return (
         <div>
             <table className="table table-striped">
@@ -17,6 +19,7 @@ export default function RelationTable({artistRels}){
                         <th>Name</th>
                         <th>MBID</th>
                         <th>Type</th>
+                        <th>Attribute</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +30,7 @@ export default function RelationTable({artistRels}){
                             <td>{artistRel.artist.name}</td>
                             <td>{artistRel.artist.id}</td>
                             <td>{artistRel.type}</td>
+                            <td>{artistRel.attributes[0]}</td>
                         </tr>
                     ))}
                 </tbody>

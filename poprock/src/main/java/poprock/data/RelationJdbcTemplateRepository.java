@@ -1,2 +1,4 @@
-package poprock.data;public class RelationJdbcTemplateRepository {
+package poprock.data;
+
+public class RelationJdbcTemplateRepository {
 }

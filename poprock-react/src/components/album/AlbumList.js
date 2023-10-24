@@ -2,8 +2,8 @@ import {useEffect, useState} from 'react';
 
 export default function AlbumList({artistSpotifyId}){
 
-    let token = localStorage.getItem('token', token);
-    const [artistSpotifyAlbums, setrtistSpotifyAlbums] = useState([]);
+    let token = window.localStorage.getItem('token');
+    const [artistSpotifyAlbums, setArtistSpotifyAlbums] = useState([]);
 
     // const fetchSpotifyAlbumsByArtist = async (e) => {
     //     e.preventDefault()
@@ -25,13 +25,14 @@ export default function AlbumList({artistSpotifyId}){
 				    Authorization: `Bearer ${token}`
 			    }
             });
+            console.log("is this working");
 
             if (response.ok) {
                 const data = await response.json();
-                setrtistSpotifyAlbums(data);
+                setArtistSpotifyAlbums(data);
                 console.log(data);
             } else {
-                setrtistSpotifyAlbums([]);
+                setArtistSpotifyAlbums([]);
             }
         };
 
