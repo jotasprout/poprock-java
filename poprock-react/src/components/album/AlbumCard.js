@@ -30,6 +30,8 @@ export default function AlbumCard({album}, {artistId}){
             albumArtFilename: album.images[0].url
         };
 
+        console.log(albumRequestBody);
+
 		fetch(`http://localhost:8080/api/album`, {
 			method: 'POST',
 			headers: {
@@ -39,7 +41,7 @@ export default function AlbumCard({album}, {artistId}){
 		})
 			.then(res => {
 				if (res.ok) {
-					navigate(`/artists/profile/${artistId}`);
+					navigate(`/artists/`);
 				} else if (res.status === 400) {
 
 					return res.json();
@@ -71,7 +73,7 @@ export default function AlbumCard({album}, {artistId}){
                         </p>
                 </div>
                 <div className='card-footer d-flex justify-content-end'>
-                    <Link className='btn btn-outline-success me-2 btn-sm' to={`/albums/profile/${album.albumId}`}><strong>Profile</strong></Link>
+                    {/* <Link className='btn btn-outline-success me-2 btn-sm' to={`/albums/profile/${album.albumId}`}><strong>Profile</strong></Link> */}
                 </div>
             </div>
             </Link>

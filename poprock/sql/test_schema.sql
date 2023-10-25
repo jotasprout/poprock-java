@@ -46,16 +46,13 @@ CREATE TABLE album (
     album_id int primary key auto_increment,
     album_name varchar (255) NOT NULL,
     album_id_mb varchar(100),
+    album_artist_id_spot varchar(50),
     album_release_group_id_mb varchar(100),
     album_label_id_mb varchar(100),
     album_id_spot varchar(48),
     album_country varchar(2),
     album_status varchar(10),
-    artist_id int,
-    constraint fk_album_artist_id
-        foreign key (artist_id)
-        references artist(artist_id),
-    release_date date NOT NULL,
+    release_date varchar(10),
     album_art_filename varchar(144) DEFAULT NULL
 );
 
@@ -145,6 +142,7 @@ CREATE TABLE genre (
         references artist(artist_id)
 );
 
+
 delimiter //
 create procedure set_known_good_state()
 begin
@@ -189,7 +187,6 @@ begin
     delete from artist;
 	alter table artist auto_increment = 1;
     
-
 	INSERT INTO artist (artist_name,artist_id_mb,artist_id_spot,artist_pop,artist_followers,artist_art_filename) VALUES
 		('The Velvet Underground',NULL,'1nJvji2KIlWSseXRSlNYsC',61,1790692,'https://i.scdn.co/image/d69c2cf10323bf08443c7d122f3a1824a760ab57'),
 		('David Bowie',NULL,'0oSGxfWSnnOXhD2fKuz2Gy',76,9882298,'https://i.scdn.co/image/ab6761610000e5ebb78f77c5583ae99472dd4a49'),

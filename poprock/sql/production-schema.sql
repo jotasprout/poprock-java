@@ -46,16 +46,13 @@ CREATE TABLE album (
     album_id int primary key auto_increment,
     album_name varchar (255) NOT NULL,
     album_id_mb varchar(100),
+    album_artist_id_spot varchar(50),
     album_release_group_id_mb varchar(100),
     album_label_id_mb varchar(100),
     album_id_spot varchar(48),
     album_country varchar(2),
     album_status varchar(10),
-    artist_id int,
-    constraint fk_album_artist_id
-        foreign key (artist_id)
-        references artist(artist_id),
-    release_date date NOT NULL,
+    release_date varchar(10),
     album_art_filename varchar(144) DEFAULT NULL
 );
 

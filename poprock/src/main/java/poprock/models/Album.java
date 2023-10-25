@@ -2,7 +2,7 @@ package poprock.models;
 
 public class Album {
     private int albumId;
-    private int albumArtistId;
+    private String albumArtistId;
     private String albumName;
     private String albumReleaseGroup;
     private String albumMbid;
@@ -39,11 +39,11 @@ public class Album {
         this.albumId = albumId;
     }
 
-    public int getAlbumArtistId() {
+    public String getAlbumArtistId() {
         return albumArtistId;
     }
 
-    public void setAlbumArtistId(int albumArtistId) {
+    public void setAlbumArtistId(String albumArtistId) {
         this.albumArtistId = albumArtistId;
     }
 

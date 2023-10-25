@@ -4,6 +4,7 @@ import AlbumCard from './AlbumCard';
 export default function AlbumList({albumsList}, {artistId}){
 
     const albums = albumsList.items;
+    const xId = artistId;
 
     // const albums = props.albumsList.items;
     

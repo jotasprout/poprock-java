@@ -54,6 +54,7 @@ public class AlbumJdbcTemplateRepository implements AlbumRepo {
 
         HashMap<String, Object> args = new HashMap<>();
         args.put("album_id_spot", album.getAlbumSpotifyId());
+        args.put("album_artist_id_spot", album.getAlbumArtistId());
         args.put("album_name", album.getAlbumName());
         args.put("album_pop", album.getAlbumPopularity());
         args.put("album_art_filename", album.getAlbumArtFilename());
