@@ -4,7 +4,6 @@ public class Relation {
 
     private int relationId;
     private String relationName;
-
     private String relationPrimaryMbid;
     private String relationArtistMbid; /* Artist related to the 'artist' or 'track' */
     private String relationType; /* 'member of band' or whatever */

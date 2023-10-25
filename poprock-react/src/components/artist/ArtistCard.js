@@ -24,7 +24,7 @@ export default function ArtistCard({artist}){
                     src={`${phCheck(artist.artistArtFilename)}`} />
                 </div>
                 <div className='card-body'>
-                    <h1 className='card-title fs-4'>{artist.artistName}</h1>
+                    <h2 className='card-title fs-4'>{artist.artistName}</h2>
                     <p><strong>Popularity:</strong> {artist.artistPopularity}
                         <br />
                         <strong>Followers:</strong> {artist.artistFollowers}

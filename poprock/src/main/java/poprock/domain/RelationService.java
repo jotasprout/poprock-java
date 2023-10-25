@@ -41,8 +41,20 @@ public class RelationService {
             return result;
         }
 
+        if (Validations.isNullOrBlank(relation.getRelationPrimaryMbid())) {
+            result.addMessage("Primary Artist MBID is required", ResultType.INVALID);
+        }
+
+        if (Validations.isNullOrBlank(relation.getRelationArtistMbid())) {
+            result.addMessage("Relation MBID is required", ResultType.INVALID);
+        }
+
         if (Validations.isNullOrBlank(relation.getRelationName())) {
             result.addMessage("Relation Name is required", ResultType.INVALID);
+        }
+
+        if (Validations.isNullOrBlank(relation.getRelationType())) {
+            result.addMessage("Relationship Type is required", ResultType.INVALID);
         }
 
         return result;
