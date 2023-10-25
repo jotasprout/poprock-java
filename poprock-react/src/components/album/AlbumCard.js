@@ -55,6 +55,7 @@ export default function AlbumCard({album}, {artistId}){
 
     return (
         <div key={album.albumId} className='col'>
+            <Link onClick={(e) => addAlbum(album)}>
             <div className='card h-100'>
                 <div>
                     <img 
@@ -73,6 +74,7 @@ export default function AlbumCard({album}, {artistId}){
                     <Link className='btn btn-outline-success me-2 btn-sm' to={`/albums/profile/${album.albumId}`}><strong>Profile</strong></Link>
                 </div>
             </div>
+            </Link>
         </div>
     );
 }
