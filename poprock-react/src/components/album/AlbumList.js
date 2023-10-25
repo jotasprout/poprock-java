@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import AlbumCard from './AlbumCard';
 
-export default function AlbumList({albumsList}){
+export default function AlbumList({albumsList}, {artistId}){
 
     const albums = albumsList.items;
 
@@ -25,7 +25,7 @@ export default function AlbumList({albumsList}){
                 <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
                     {albums.map((album, index) => {
                         // console.log(artist);
-                        return <AlbumCard album={album} key={index}/>
+                        return <AlbumCard album={album} key={index} artistId={artistId} />
                     })}
                 </div>            
             </div>
