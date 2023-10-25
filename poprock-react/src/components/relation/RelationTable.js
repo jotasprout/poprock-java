@@ -24,39 +24,39 @@ export default function RelationTable(props){
     console.log(primaryMbid);
     // console.log(rels);
 
-    // function addArtistRel(artistRel, primaryMbid){
+    function addArtistRel(artistRel, primaryMbid){
 
-    //     const artistRelRequestBody = {
-    //         relationId: 0,
-    //         relationPrimaryMbid: primaryMbid,
-    //         relationArtistMbid: artistRel.artist.id,
-    //         relationName: artistRel.artist.name,
-    //         relationType: artistRel.type,
-    //         relationAttribute: artistRel.attributes[0]
-    //     };
+        const artistRelRequestBody = {
+            relationId: 0,
+            relationPrimaryMbid: primaryMbid,
+            relationArtistMbid: artistRel.artist.id,
+            relationName: artistRel.artist.name,
+            relationType: artistRel.type,
+            relationAttribute: artistRel.attributes[0]
+        };
 
-	// 	fetch(`http://localhost:8080/api/relation`, {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify(artistRelRequestBody),
-	// 	})
-	// 		.then(res => {
-	// 			if (res.ok) {
-	// 				navigate(`/artists`);
-	// 			} else if (res.status === 400) {
+		fetch(`http://localhost:8080/api/relation`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(artistRelRequestBody),
+		})
+			.then(res => {
+				if (res.ok) {
+					navigate(`/artists`);
+				} else if (res.status === 400) {
 
-	// 				return res.json();
-	// 			} else {
-	// 				return Promise.reject(
-	// 					new Error(`Unexpected status code: ${res.status}`)
-	// 				);
-	// 			}
-	// 		})
-	// 		.then(setErrors)
-	// 		.catch(console.error); 
-	// }
+					return res.json();
+				} else {
+					return Promise.reject(
+						new Error(`Unexpected status code: ${res.status}`)
+					);
+				}
+			})
+			.then(setErrors)
+			.catch(console.error); 
+	}
 
 
     return (
@@ -77,7 +77,9 @@ export default function RelationTable(props){
                         <tr key={index}>
                             <td>no id yet</td>
                             <td>
-                            {artistRel.artist.name}
+                                <Link onClick={(e) => addArtistRel(artistRel, primaryMbid)}>
+                                    {artistRel.artist.name}
+                                </Link>
 
                             </td>
                             <td>{artistRel.artist.id}</td>
@@ -94,4 +96,6 @@ export default function RelationTable(props){
 //     <Link onClick={(e) => addArtistRel(artistRel, primaryMbid)}>
 //     {artistRel.artist.name}
 // </Link>
+
+// {artistRel.artist.name}
 }
