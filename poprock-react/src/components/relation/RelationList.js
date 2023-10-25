@@ -27,7 +27,7 @@ export default function RelationList({artist}){
     }, [artist]);
 // console.log(artistRels);
     return (
-        <RelationTable artistRels={artistRels} primaryMbid={artist.artistMbid}/>
+        <RelationTable artistRels={artistRels} primaryMbid={artist.artistMbid} artistId={artist.artistId}/>
 // <RelationTable artistRels={artistRels}/>
 
     );

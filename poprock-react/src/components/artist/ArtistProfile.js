@@ -80,9 +80,9 @@ export default function ArtistProfile(){
 
     };
 
-    if (artistSpotifyAlbums){
-        console.log(artistSpotifyAlbums);
-    };
+    // if (artistSpotifyAlbums){
+    //     console.log(artistSpotifyAlbums);
+    // };
 
     return (
         <div id="profile" className="container">
@@ -113,7 +113,7 @@ export default function ArtistProfile(){
 
                     <button onClick={fetchSpotifyAlbums}>Get Albums</button>
                 </div>   
-                {artistSpotifyAlbums ? <AlbumList albumsList={artistSpotifyAlbums}/> : <p>no albums</p>}
+                {artistSpotifyAlbums ? <AlbumList albumsList={artistSpotifyAlbums} artistId={artistId}/> : <p>no albums</p>}
             <RelationList artist={artist}/>
         </div>
     );

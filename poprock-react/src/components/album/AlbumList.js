@@ -4,7 +4,13 @@ import AlbumCard from './AlbumCard';
 export default function AlbumList({albumsList}){
 
     const albums = albumsList.items;
+
+    // const albums = props.albumsList.items;
     
+    // if (!props){
+    //     return null;
+    // }
+
     if (!albums){
         return null;
     };

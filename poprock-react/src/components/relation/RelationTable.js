@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function RelationTable(props){
 
-    // const artistRels = props.artistRels;
+    const artistId = props.artistId;
     const rels = props.artistRels.relations;
     const primaryMbid = props.primaryMbid;
 
@@ -43,7 +43,7 @@ export default function RelationTable(props){
 		})
 			.then(res => {
 				if (res.ok) {
-					navigate(`/artists`);
+					navigate(`/artists/profile/${artistId}`);
 				} else if (res.status === 400) {
 
 					return res.json();
