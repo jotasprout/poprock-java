@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function AlbumCard({album}, {artistId}){
+export default function AlbumCard({album, artistId}){
 
     function phCheck(imgFileName){
         switch(imgFileName){
@@ -41,7 +41,7 @@ export default function AlbumCard({album}, {artistId}){
 		})
 			.then(res => {
 				if (res.ok) {
-					navigate(`/artists/`);
+					navigate(`/artists/profile/${artistId}`);
 				} else if (res.status === 400) {
 
 					return res.json();

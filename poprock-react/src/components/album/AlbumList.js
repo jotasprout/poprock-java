@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import AlbumCard from './AlbumCard';
 
-export default function AlbumList({albumsList}, {artistId}){
+export default function AlbumList({albumsList, artistId}){
 
     const albums = albumsList.items;
     const xId = artistId;

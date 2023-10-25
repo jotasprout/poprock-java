@@ -11,6 +11,16 @@ export default function RelationTable(props){
     const navigate = useNavigate();
     const [errors, setErrors] = useState([]);
 
+    // useEffect(() => {
+    //     if(rels){
+    //         Promise.all(rels.map(rel => {
+    //             return addArtistRel(rel, primaryMbid);
+    //         }))
+    //         .then(()=>console.log("added all artists"))
+    //         .catch(console.log)
+    //     }
+    // },[artistId])
+
     if (!props){
         return null;
     }
@@ -22,6 +32,8 @@ export default function RelationTable(props){
     // console.log(props);
     console.log(rels);
     console.log(primaryMbid);
+
+    
 
     function addArtistRel(artistRel, primaryMbid){
 
@@ -43,7 +55,8 @@ export default function RelationTable(props){
 		})
 			.then(res => {
 				if (res.ok) {
-					navigate(`/artists/profile/${artistId}`);
+					// navigate(`/artists/profile/${artistId}`);
+                    console.log(`added ${artistRelRequestBody.relationName}`);
 				} else if (res.status === 400) {
 
 					return res.json();
@@ -76,10 +89,9 @@ export default function RelationTable(props){
                         <tr key={index}>
                             <td>no id yet</td>
                             <td>
-                                <Link onClick={(e) => addArtistRel(artistRel, primaryMbid)}>
-                                    {artistRel.artist.name}
-                                </Link>
-
+                            <Link onClick={(e) => addArtistRel(artistRel, primaryMbid)}>
+                            {artistRel.artist.name}
+                            </Link>
                             </td>
                             <td>{artistRel.artist.id}</td>
                             <td>{artistRel.type}</td>

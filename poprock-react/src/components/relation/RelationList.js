@@ -4,7 +4,7 @@ import RelationTable from "./RelationTable";
 
 export default function RelationList({artist}){
 
-    const [artistRels, setArtistRels] = useState("");
+    const [artistRels, setArtistRels] = useState(null);
 
     useEffect(() => {
         const fetchArtistRels = async () => {
@@ -16,19 +16,22 @@ export default function RelationList({artist}){
                 console.log(data);
                 console.log("this is working");
             } else {
-                setArtistRels([]);
+                setArtistRels(null);
             }
         };
 
         if (artist){
             fetchArtistRels();
+
         }
         
     }, [artist]);
-// console.log(artistRels);
+
+    if(!artistRels){
+        return null;
+    }
     return (
         <RelationTable artistRels={artistRels} primaryMbid={artist.artistMbid} artistId={artist.artistId}/>
-// <RelationTable artistRels={artistRels}/>
 
     );
 }
