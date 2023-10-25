@@ -24,11 +24,11 @@ export default function RelationTable(props){
     console.log(primaryMbid);
     // console.log(rels);
 
-    // function addArtistRel(artistRel){
+    // function addArtistRel(artistRel, primaryMbid){
 
     //     const artistRelRequestBody = {
     //         relationId: 0,
-    //         // relationPrimaryMbid: primaryMbid,
+    //         relationPrimaryMbid: primaryMbid,
     //         relationArtistMbid: artistRel.artist.id,
     //         relationName: artistRel.artist.name,
     //         relationType: artistRel.type,
@@ -78,9 +78,7 @@ export default function RelationTable(props){
                             <td>no id yet</td>
                             <td>
                             {artistRel.artist.name}
-                                {/* <Link onClick={(e) => addArtistRel(artistRel)}>
-                                    {artistRel.artist.name}
-                                </Link> */}
+
                             </td>
                             <td>{artistRel.artist.id}</td>
                             <td>{artistRel.type}</td>
@@ -92,4 +90,8 @@ export default function RelationTable(props){
        </div>
 
     );
+
+//     <Link onClick={(e) => addArtistRel(artistRel, primaryMbid)}>
+//     {artistRel.artist.name}
+// </Link>
 }
