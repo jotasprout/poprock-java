@@ -61,7 +61,7 @@ export default function RelationTable(props){
 
     return (
         <div>
-            {/* <table className="table table-striped">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -77,10 +77,10 @@ export default function RelationTable(props){
                         <tr key={index}>
                             <td>no id yet</td>
                             <td>
-
-                                <Link onClick={(e) => addArtistRel(artistRel)}>
+                            {artistRel.artist.name}
+                                {/* <Link onClick={(e) => addArtistRel(artistRel)}>
                                     {artistRel.artist.name}
-                                </Link>
+                                </Link> */}
                             </td>
                             <td>{artistRel.artist.id}</td>
                             <td>{artistRel.type}</td>
@@ -88,7 +88,7 @@ export default function RelationTable(props){
                         </tr>
                     ))}
                 </tbody>
-            </table > */}
+            </table >
        </div>
 
     );
