@@ -114,19 +114,13 @@ create table track_playcount (
 
 CREATE TABLE relation_artist (
     relation_id int primary key auto_increment,
-    relation_primary_id int,
-    relation_artist_id int,
-    relation_artist_type varchar(100),
+    relation_primary_id_mb varchar(100),
+    relation_artist_id_mb varchar(100),
+    relation_name varchar(100),
     relation_type varchar(100),
-    relation_attributes JSON,
+    relation_attribute varchar(100),
     relation_begin varchar(4),
-    relation_end varchar(4),
-    constraint fk_primary_id
-        foreign key (relation_primary_id)
-        references artist(artist_id),
-    constraint fk_artist_artist_id
-        foreign key (relation_artist_id)
-        references artist(artist_id)
+    relation_end varchar(4)
 );
 
 CREATE TABLE relation_track (

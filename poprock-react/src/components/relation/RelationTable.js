@@ -15,14 +15,13 @@ export default function RelationTable(props){
         return null;
     }
 
-    // if (!props){
-    //     return null;
-    // }
+    if (!rels){
+        return null;
+    }
 
     // console.log(props);
     console.log(rels);
     console.log(primaryMbid);
-    // console.log(rels);
 
     function addArtistRel(artistRel, primaryMbid){
 

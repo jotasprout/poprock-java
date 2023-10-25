@@ -33,7 +33,7 @@ public class RelationJdbcTemplateRepository implements RelationRepo{
     @Override
     public Relation add(Relation relation) {
         SimpleJdbcInsert insert = new SimpleJdbcInsert(jdbcTemplate)
-                .withTableName("relation")
+                .withTableName("relation_artist")
                 .usingGeneratedKeyColumns("relation_id");
 
         HashMap<String, Object> args = new HashMap<>();
