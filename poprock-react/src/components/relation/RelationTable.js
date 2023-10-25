@@ -11,6 +11,19 @@ export default function RelationTable(props){
     const navigate = useNavigate();
     const [errors, setErrors] = useState([]);
 
+    function compareRels(a, b){
+        if ( a.artist.id < b.artist.id ){
+            return -1;
+        }
+        if ( a.artist.id > b.artist.id ){
+            return 1;
+        }
+        return 0;
+    }
+
+
+    
+
     // useEffect(() => {
     //     if(rels){
     //         Promise.all(rels.map(rel => {
@@ -21,6 +34,8 @@ export default function RelationTable(props){
     //     }
     // },[artistId])
 
+    rels.sort(compareRels);
+
     if (!props){
         return null;
     }
@@ -29,6 +44,7 @@ export default function RelationTable(props){
         return null;
     }
 
+    
     // console.log(props);
     console.log(rels);
     console.log(primaryMbid);
