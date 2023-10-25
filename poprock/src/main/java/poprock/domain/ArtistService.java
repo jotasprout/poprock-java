@@ -20,7 +20,22 @@ public class ArtistService {
     }
 
     public Result<Artist> update(Artist artist) {
-        return null;
+        Result<Artist> result = validate(artist);
+        if (!result.isSuccess()) {
+            return result;
+        }
+
+        if (artist.getArtistId() <= 0) {
+            result.addMessage("artistId must be set for `update` operation", ResultType.INVALID);
+            return result;
+        }
+
+        if (!repo.update(artist)) {
+            String msg = String.format("artistId: %s, not found", artist.getArtistId());
+            result.addMessage(msg, ResultType.NOT_FOUND);
+        }
+
+        return result;
     }
 
     public boolean deleteById(int artistId) {

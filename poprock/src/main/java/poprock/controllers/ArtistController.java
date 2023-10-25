@@ -50,6 +50,7 @@ public class ArtistController {
         }
 
         Result<Artist> result = service.update(artist);
+
         if (result.isSuccess()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

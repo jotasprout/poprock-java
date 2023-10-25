@@ -104,10 +104,10 @@ export default function Auth(){
             // artistMbid: "",
         };
 
-        console.log(artist);
+        // console.log(artist);
         console.log(artistRequestBody);
         //artistRequestBody.followers = grabFollowers(artist);
-        console.log(artist);
+        // console.log(artist);
 		fetch(`http://localhost:8080/api/artist`, {
 			method: 'POST',
 			headers: {
@@ -119,7 +119,6 @@ export default function Auth(){
 				if (res.ok) {
 					navigate(`/artists`);
 				} else if (res.status === 400) {
-
 					return res.json();
 				} else {
 					return Promise.reject(

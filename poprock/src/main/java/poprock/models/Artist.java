@@ -14,8 +14,6 @@ public class Artist {
     private String artistType;
     private int artistListeners;
     private int artistPlaycount;
-//    private List<String> artistGenres;
-
 
     @Override
     public boolean equals(Object o) {

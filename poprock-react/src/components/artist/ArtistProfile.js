@@ -62,7 +62,7 @@ export default function ArtistProfile(){
     }
 
     const fetchSpotifyAlbums = async () => {
-        const response = await fetch("https://api.spotify.com/v1/artists/" + artist.artistSpotifyId + "/albums?include_groups=album&limit=40&market=US", {
+        const response = await fetch("https://api.spotify.com/v1/artists/" + artist.artistSpotifyId + "/albums?include_groups=album&limit=50&market=US", {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`

@@ -21,9 +21,6 @@ export default function RelationTable(props){
         return 0;
     }
 
-
-    
-
     // useEffect(() => {
     //     if(rels){
     //         Promise.all(rels.map(rel => {

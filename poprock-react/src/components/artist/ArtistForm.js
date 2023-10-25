@@ -64,18 +64,26 @@ export default function ArtistForm() {
     }
 
 	function updateArtist() {
+
+        const artistUpdateBody = {
+            artistId: artist.artistId,
+            artistSpotifyId: artist.artistSpotifyId,
+            artistName: artist.artistName,
+            artistArtFilename: artist.artistArtFilename,
+            artistMbid: artist.artistMbid
+        };
+
 		fetch(`http://localhost:8080/api/artist/${artist.artistId}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(artist),
+			body: JSON.stringify(artistUpdateBody),
 		})
 			.then(res => {
 				if (res.ok) {
 					navigate(`/artists`);
-				} else if (res.status === 400) {
-					return res.json();
+                    return;
 				} else if (res.status === 404) {
 					navigate('/404');
 				} else {
@@ -86,7 +94,6 @@ export default function ArtistForm() {
 				}
 			})
 			.then(setErrors)
-			.catch(console.error)
             .catch((error) => {
                 console.error(error)
                 navigate('/artists');
