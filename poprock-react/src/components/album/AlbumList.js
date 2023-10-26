@@ -21,7 +21,8 @@ export default function AlbumList({albumsList, artistId}){
     return (
         <div>
             <div id="albums">
-                <h2>Albums</h2>
+                <h2>Albums On Spotify</h2>
+                <p>Add an Album by clicking the cover.</p>
                 <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
                     {albums.map((album, index) => {
                         // console.log(artist);

@@ -31,7 +31,13 @@ export default function RelationList({artist}){
         return null;
     }
     return (
-        <RelationTable artistRels={artistRels} primaryMbid={artist.artistMbid} artistId={artist.artistId}/>
+        <div>
+            <div id="albums">
+                <h2>Related Artists from MusicBrainz</h2>
+                <p><strong><em>Add a related artist by clicking their name.</em></strong></p>
 
+                <RelationTable artistRels={artistRels} primaryMbid={artist.artistMbid} artistId={artist.artistId}/>
+                </div>
+       </div>
     );
 }

@@ -96,15 +96,15 @@ export default function ArtistProfile(){
                         style={{height: '360px'}}
                         />
                 <p>
-                <strong>Spotify ID:</strong> {artist.artistSpotifyId}
+                {/* <strong>Spotify ID:</strong> {artist.artistSpotifyId}
                     <br />
                     <strong>MusicBrainz ID:</strong> {artist.artistMbid}
-                    <br />
-                    <strong>Popularity:</strong> {artist.artistPopularity}
+                    <br /> */}
+                    <strong>Spotify Popularity:</strong> {artist.artistPopularity}
                     <br />
                     {/* <strong>Listeners:</strong> {artist.artistListeners}
                     <br /> */}
-                    <strong>Followers:</strong> {artist.artistFollowers}
+                    <strong>Spotify Followers:</strong> {artist.artistFollowers}
                     {/* <br />
                     <strong>Artist Art:</strong> {artist.artistArtFilename} */}
                     </p>                
@@ -112,7 +112,7 @@ export default function ArtistProfile(){
                 <div>
                     {/* <Link className='btn btn-primary me-2 btn-sm' to={`/albums/${artist.artistSpotifyId}`}><strong>Get Albums</strong></Link> */}
 
-                    <button onClick={fetchSpotifyAlbums}>Get Albums</button>
+                    <button onClick={fetchSpotifyAlbums}>Choose Albums from Spotify</button>
                 </div>   
                 {artistSpotifyAlbums ? <AlbumList albumsList={artistSpotifyAlbums} artistId={artistId}/> : <p>no albums</p>}
             <RelationList artist={artist}/>
