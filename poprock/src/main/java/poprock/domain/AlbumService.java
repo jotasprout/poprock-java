@@ -20,6 +20,10 @@ public class AlbumService {
         return repo.findAll();
     }
 
+    public List<Album> findAlbumsByArtist(String artistSpotifyId){
+        return repo.findAlbumsByArtist(artistSpotifyId);
+    }
+
     public Result<Album> update(Album album) {
         Result<Album> result = validate(album);
         if (!result.isSuccess()) {

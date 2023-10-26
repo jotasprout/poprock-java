@@ -1,14 +1,18 @@
-export default function ArtistContainer () {
+import PopContainer from "./PopContainer";
 
-    // const artistPop = artist.artistPop;
+export default function ArtistContainer (props) {
+
+    const album = props.album;
+    console.log(album);
 
     return (
-        <div className="col">
-            <div className='popContainer'>
-                <div className="pop"></div>
-                <div className="pop"></div>
-                <div className="pop"></div>
-                <div className="pop"></div>
+        <div className="col artistContainer">
+            
+            <PopContainer album={album}/>
+            <div>
+                <img style={{width: '100%', objectFit: 'cover'}}
+                        src={`${album.albumArtFilename}`}
+                />
             </div>            
         </div>
     );

@@ -7,6 +7,7 @@ import java.util.List;
 public interface AlbumRepo {
 
     List<Album> findAll();
+    List<Album> findAlbumsByArtist(String artistSpotifyId);
 
     boolean update(Album album);
 

@@ -28,6 +28,9 @@ export default function ArtistCard({artist}){
                     <p><strong>Popularity:</strong> {artist.artistPopularity}
                         <br />
                         <strong>Followers:</strong> {artist.artistFollowers}
+                        <br />
+                        <strong>Spotify ID:</strong> {artist.artistSpotifyId}
+                    
                         {/* <br />
                         <strong>Artist Art:</strong> {artist.artistArtFilename} */}
                         </p>

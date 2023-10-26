@@ -25,6 +25,11 @@ public class AlbumController {
         return service.findAll();
     }
 
+    @GetMapping("/artist/{artistSpotifyId}")
+    public List<Album> findAlbumsByArtist(@PathVariable String artistSpotifyId) {
+        return service.findAlbumsByArtist(artistSpotifyId);
+    }
+
     @GetMapping("/{albumId}")
     public Album findById(@PathVariable int albumId) {
         return service.findById(albumId);
