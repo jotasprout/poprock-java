@@ -34,8 +34,9 @@ export default function AlbumCardLocal({album, artistId}){
                 }
             });
             if (response.ok) {
-                const data = await response.json();
-                setAlbumFacts(data);
+                const data = await response.json()
+                updateAlbum(album, data);
+                // setAlbumFacts(data);
                 // console.log(data);
             } else {
                 setAlbumFacts([]);
@@ -46,47 +47,47 @@ export default function AlbumCardLocal({album, artistId}){
         }
     // });
 
-    function updateAlbum(album){
+    function updateAlbum(album, data){
 
-        fetchSpotifyAlbumFacts(album.albumSpotifyId);
+        // fetchSpotifyAlbumFacts(album.albumSpotifyId);
 
-        if (albumFacts){
-            console.log(albumFacts);
-        }
+        // if (albumFacts){
+        //     console.log(albumFacts);
+        // }
         
-        // const updatedAlbumRequestBody = {
-        //     albumId: album.albumId,
-        //     albumSpotifyId: album.albumSpotifyId,
-        //     albumName: album.albumName,
-        //     albumSpotifyId: album.albumArtistId,
-        //     albumReleaseDate: album.albumReleaseDate,
-        //     albumArtFilename: album.albumArtFilename,
-        //     albumPopularity: albumFacts.popularity
-        // };
+        const updatedAlbumRequestBody = {
+            albumId: album.albumId,
+            albumSpotifyId: album.albumSpotifyId,
+            albumName: album.albumName,
+            albumSpotifyId: album.albumArtistId,
+            albumReleaseDate: album.albumReleaseDate,
+            albumArtFilename: album.albumArtFilename,
+            albumPopularity: data.popularity
+        };
 
-        // console.log(updatedAlbumRequestBody);
+        console.log(updatedAlbumRequestBody);
 
-		// fetch(`http://localhost:8080/api/album/${album.albumId}`, {
-		// 	method: 'PUT',
-		// 	headers: {
-		// 		'Content-Type': 'application/json',
-		// 	},
-		// 	body: JSON.stringify(updatedAlbumRequestBody),
-		// })
-		// 	.then(res => {
-		// 		if (res.ok) {
-		// 			navigate(`/artists/profile/${artistId}`);
-		// 		} else if (res.status === 400) {
+		fetch(`http://localhost:8080/api/album/${album.albumId}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(updatedAlbumRequestBody),
+		})
+			.then(res => {
+				if (res.ok) {
+					navigate(`/albums`);
+				} else if (res.status === 400) {
 
-		// 			return res.json();
-		// 		} else {
-		// 			return Promise.reject(
-		// 				new Error(`Unexpected status code: ${res.status}`)
-		// 			);
-		// 		}
-		// 	})
-		// 	.then(setErrors)
-		// 	.catch(console.error); 
+					return res.json();
+				} else {
+					return Promise.reject(
+						new Error(`Unexpected status code: ${res.status}`)
+					);
+				}
+			})
+			.then(setErrors)
+			.catch(console.error); 
 	}
 
     return (
@@ -110,7 +111,7 @@ export default function AlbumCardLocal({album, artistId}){
                     </p>
                 </div>
                 <div className='card-footer d-flex justify-content-end'>
-                    <button onClick={(e) => updateAlbum(album)}>Update Album</button>
+                    <button onClick={(e) => fetchSpotifyAlbumFacts(album)}>Update Album</button>
                 </div>
             </div>
             {/* </Link> */}
