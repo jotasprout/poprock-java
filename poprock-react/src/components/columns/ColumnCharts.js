@@ -1,7 +1,7 @@
-import ArtistContainer from "./ArtistContainer";
+import ArtistContainer from "./ColumnContainer";
 import { useEffect, useState } from "react";
 
-export default function ArtistColumns () {
+export default function ColumnCharts () {
 
     const bowie = "0oSGxfWSnnOXhD2fKuz2Gy";
     const sabbath = "5M52tdBnJaKSvOpJGz8mfZ";
