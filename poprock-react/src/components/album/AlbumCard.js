@@ -58,24 +58,24 @@ export default function AlbumCard({album, artistId}){
     return (
         <div key={album.albumId} className='col'>
             <Link onClick={(e) => addAlbum(album)}>
-            <div className='card h-100'>
-                <div>
-                    <img 
-                    className='card-img-top'
-                    style={{width: '100%', objectFit: 'cover'}}
-                    src={`${phCheck(album.images[0].url)}`} />
+                <div className='card h-100'>
+                    <div>
+                        <img 
+                        className='card-img-top'
+                        style={{width: '100%', objectFit: 'cover'}}
+                        src={`${phCheck(album.images[0].url)}`} />
+                    </div>
+                    <div className='card-body'>
+                        <h3 className='card-title fs-4'>{album.name}</h3>
+                        <p><strong>Spotify ID:</strong> {album.id}
+                            <br />
+                            <strong>Released:</strong> {album.release_date}
+                            </p>
+                    </div>
+                    <div className='card-footer d-flex justify-content-end'>
+                        {/* <Link className='btn btn-outline-success me-2 btn-sm' to={`/albums/profile/${album.albumId}`}><strong>Profile</strong></Link> */}
+                    </div>
                 </div>
-                <div className='card-body'>
-                    <h3 className='card-title fs-4'>{album.name}</h3>
-                    <p><strong>Spotify ID:</strong> {album.id}
-                        <br />
-                        <strong>Released:</strong> {album.release_date}
-                        </p>
-                </div>
-                <div className='card-footer d-flex justify-content-end'>
-                    {/* <Link className='btn btn-outline-success me-2 btn-sm' to={`/albums/profile/${album.albumId}`}><strong>Profile</strong></Link> */}
-                </div>
-            </div>
             </Link>
         </div>
     );

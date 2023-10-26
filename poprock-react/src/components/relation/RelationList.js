@@ -13,8 +13,8 @@ export default function RelationList({artist}){
             if (response.ok) {
                 const data = await response.json();
                 setArtistRels(data);
-                console.log(data);
-                console.log("this is working");
+                // console.log(data);
+                // console.log("this is working");
             } else {
                 setArtistRels(null);
             }

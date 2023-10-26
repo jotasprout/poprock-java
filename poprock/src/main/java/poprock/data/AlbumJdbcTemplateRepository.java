@@ -28,14 +28,14 @@ public class AlbumJdbcTemplateRepository implements AlbumRepo {
 
     @Override
     public List<Album> findAll() {
-        final String sql = "select album_id, album_name, album_art_filename, album_id_mb, album_id_spot, album_followers, album_listeners, album_pop, album_art_filename "
+        final String sql = "select album_id, album_artist_id_spot, album_name, album_art_filename, release_date, album_id_mb, album_id_spot, album_pop, album_art_filename "
                 + "from album;";
         return jdbcTemplate.query(sql, new AlbumMapper());
     }
 
     @Override
     public boolean update(Album album) {
-        final String sql = "update album set album_id_mb = ?, artist_id_spot = ? where artist_id = ?;";
+        final String sql = "update album set album_id_mb = ?, album_pop = ? where album_id = ?;";
 
         return jdbcTemplate.update(sql,
                 album.getAlbumMbid(),

@@ -6,11 +6,7 @@ export default function AlbumList({albumsList, artistId}){
     const albums = albumsList.items;
     const xId = artistId;
 
-    // https://api.spotify.com/v1/albums/{id}
-    // above is for getting popularity
 
-    // https://api.spotify.com/v1/albums/{id}/tracks
-    // above gets album tracks
 
     if (!albums){
         return null;

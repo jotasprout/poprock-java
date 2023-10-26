@@ -43,10 +43,8 @@ export default function RelationTable(props){
 
     
     // console.log(props);
-    console.log(rels);
-    console.log(primaryMbid);
-
-    
+    // console.log(rels);
+    // console.log(primaryMbid);
 
     function addArtistRel(artistRel, primaryMbid){
 

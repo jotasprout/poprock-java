@@ -30,7 +30,7 @@ export default function ArtistProfile(){
     }
 
     const {artistId} = useParams();
-    console.log(artistId);
+    // console.log(artistId);
 
     const [artist, setArtist] = useState(null);
     const navigate = useNavigate();

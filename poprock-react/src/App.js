@@ -18,6 +18,8 @@ import AlbumProfile from "./components/album/AlbumProfile";
 
 import Relations from './components/relation/Relations';
 
+import AlbumGallery from './components/album/AlbumGallery';
+
 import NotFound from "./components/NotFound";
 import Error from './components/errors/Error';
 
@@ -46,6 +48,8 @@ export default function App() {
 
                     <Route path='/artists/profile/:artistId' element={<ArtistProfile />} />
                     <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
+
+                    <Route path='/albums' element={<AlbumGallery />} />
 
                     <Route path='/force' element={<Relations />} />
 
