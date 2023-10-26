@@ -28,7 +28,7 @@ export default function ArtistColumns () {
     return (
         <div id="columnContainer" className="container">
             <h1>Column Chart</h1>
-            <div className='row'>
+            <div className='row colsContainer'>
 
                 {myAlbums.map(album => {
                     console.log(album);

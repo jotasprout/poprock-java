@@ -2,11 +2,45 @@
   text-align: center;
 }
 
-.pop {
-    height: 4px;
-    width: 50px;
-    margin: 1px;
+/* img {
+    max-width:100%;
+} */
+
+.imageHolder {
+    justify-content:center;
+    margin: auto;
+    text-align: center;
+}
+
+.popUnit {
+    height: 5px;
+    width: 70px;
+    margin: 1px auto;
     background-color: blue;
+}
+
+.popContainer {
+    /* height: 600px; */
+    width: 70px;
+    padding: 0;
+    margin: 0 2px 0 2px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.artistContainer {
+    /* height: 600px; */
+    /* display:flex; */
+    justify-content:center;
+    width: 70px;
+    padding: 0;
+    margin: 0 2px 0 2px;
+    vertical-align: bottom;
+    background-color: red;
+}
+
+.colsContainer {
+    vertical-align: bottom;
 }
 
 .App-logo {

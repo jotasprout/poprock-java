@@ -11,7 +11,7 @@ console.log(album);
         let popUnits = [];
       
         for (let i = 0; i <= albumPopularity; i++) {
-            popUnits.push(<div className="pop"></div>);
+            popUnits.push(<div className="popUnit"></div>);
         }
         return popUnits;
     }

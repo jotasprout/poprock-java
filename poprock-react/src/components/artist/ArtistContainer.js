@@ -7,13 +7,18 @@ export default function ArtistContainer (props) {
 
     return (
         <div className="col artistContainer">
-            
+            {/* <div>
+                
+            </div> */}
             <PopContainer album={album}/>
-            <div>
-                <img style={{width: '100%', objectFit: 'cover'}}
-                        src={`${album.albumArtFilename}`}
-                />
-            </div>            
+
+                            
+            <div className="imageHolder">
+                <img style={{width: '70px', margin: 'auto', objectFit: 'cover'}}
+                        src={`${album.albumArtFilename}`} />           
+            </div>
+
+                        
         </div>
     );
 }
