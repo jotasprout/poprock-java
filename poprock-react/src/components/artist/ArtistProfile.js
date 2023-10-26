@@ -114,7 +114,9 @@ export default function ArtistProfile(){
 
                     <button onClick={fetchSpotifyAlbums}>Choose Albums from Spotify</button>
                 </div>   
+
                 {artistSpotifyAlbums ? <AlbumList albumsList={artistSpotifyAlbums} artistId={artistId}/> : <p>no albums</p>}
+                
             <RelationList artist={artist}/>
         </div>
     );

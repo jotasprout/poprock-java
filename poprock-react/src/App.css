@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.pop {
+    height: 5px;
+    width: 100px;
+    margin: 2px;
+    background-color: blue;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

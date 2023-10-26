@@ -102,13 +102,13 @@ export default function AlbumCardLocal({album, artistId}){
                 </div>
                 <div className='card-body'>
                     <h3 className='card-title fs-4'>{album.albumName}</h3>
-                    <p>
+                    {/* <p>
                         <strong>Spotify ID:</strong> {album.albumSpotifyId}
                         <br />
                         <strong>Spotify Popularity:</strong> {album.albumPopularity}
                         <br />
                         <strong>Released:</strong> {album.albumReleaseDate}
-                    </p>
+                    </p> */}
                 </div>
                 <div className='card-footer d-flex justify-content-end'>
                     <button onClick={(e) => fetchSpotifyAlbumFacts(album)}>Update Album</button>

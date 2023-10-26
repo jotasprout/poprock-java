@@ -18,12 +18,24 @@ export default function AlbumGallery(){
         fetchMyAlbums();
     }, []);
 
+    function compareYears(a, b){
+        if ( a.albumReleaseDate < b.albumReleaseDate ){
+            return -1;
+        }
+        if ( a.albumReleaseDate > b.albumReleaseDate ){
+            return 1;
+        }
+        return 0;
+    }
+
+    myAlbums.sort(compareYears);
+
     return (
         <div id="albums" className="container">
             <h1>Albums</h1>
             <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
                 {myAlbums.map(album => {
-                    // console.log(album);
+                    console.log(album);
                     return <AlbumCardLocal album={album} key={album.albumId}/>
                 })}
             </div>            

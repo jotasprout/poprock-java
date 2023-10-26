@@ -19,6 +19,8 @@ import AlbumProfile from "./components/album/AlbumProfile";
 import Relations from './components/relation/Relations';
 
 import AlbumGallery from './components/album/AlbumGallery';
+import Scatter from './components/scatter/Scatter';
+import ArtistColumns from './components/artist/ArtistColumns';
 
 import NotFound from "./components/NotFound";
 import Error from './components/errors/Error';
@@ -50,6 +52,8 @@ export default function App() {
                     <Route path='/albums/profile/:albumId' element={<AlbumProfile />} />
 
                     <Route path='/albums' element={<AlbumGallery />} />
+                    <Route path='/scatter' element={<Scatter />} />
+                    <Route path='/artistcolumns' element={<ArtistColumns />} />
 
                     <Route path='/force' element={<Relations />} />
 
