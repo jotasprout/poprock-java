@@ -14,7 +14,7 @@ export default function ArtistColumns () {
 
     useEffect(() => {
         const fetchMyAlbums = async () => {
-            const response = await fetch(`http://localhost:8080/api/album/artist/${sabbath}`);
+            const response = await fetch(`http://localhost:8080/api/album/artist/${dio}`);
             if (response.ok) {
                 setMyAlbums(await response.json());
             } else {
@@ -24,6 +24,18 @@ export default function ArtistColumns () {
 
         fetchMyAlbums();
     }, []);
+
+    function compareYears(a, b){
+        if ( a.albumReleaseDate < b.albumReleaseDate ){
+            return -1;
+        }
+        if ( a.albumReleaseDate > b.albumReleaseDate ){
+            return 1;
+        }
+        return 0;
+    }
+
+    myAlbums.sort(compareYears);
 
     return (
         <div id="columnContainer" className="container">
