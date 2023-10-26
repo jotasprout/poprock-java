@@ -18,6 +18,18 @@ export default function ArtistList(){
         fetchArtists();
     }, []);
 
+    function compareArtists(a, b){
+        if ( a.artistName < b.artistName ){
+            return -1;
+        }
+        if ( a.artistName > b.artistName ){
+            return 1;
+        }
+        return 0;
+    }
+
+    artists.sort(compareArtists);
+
     return (
         <div id="artists" className="container">
             <h1>Artists</h1>

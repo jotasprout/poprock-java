@@ -21,16 +21,6 @@ export default function RelationTable(props){
         return 0;
     }
 
-    // useEffect(() => {
-    //     if(rels){
-    //         Promise.all(rels.map(rel => {
-    //             return addArtistRel(rel, primaryMbid);
-    //         }))
-    //         .then(()=>console.log("added all artists"))
-    //         .catch(console.log)
-    //     }
-    // },[artistId])
-
     rels.sort(compareRels);
 
     if (!props){
