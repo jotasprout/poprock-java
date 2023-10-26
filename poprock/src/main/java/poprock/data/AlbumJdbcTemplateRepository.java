@@ -9,6 +9,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import poprock.models.Album;
+import poprock.models.Artist;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -24,11 +25,22 @@ public class AlbumJdbcTemplateRepository implements AlbumRepo {
     public AlbumJdbcTemplateRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
     @Override
     public List<Album> findAll() {
         final String sql = "select album_id, album_name, album_art_filename, album_id_mb, album_id_spot, album_followers, album_listeners, album_pop, album_art_filename "
                 + "from album;";
         return jdbcTemplate.query(sql, new AlbumMapper());
+    }
+
+    @Override
+    public boolean update(Album album) {
+        final String sql = "update album set album_id_mb = ?, artist_id_spot = ? where artist_id = ?;";
+
+        return jdbcTemplate.update(sql,
+                album.getAlbumMbid(),
+                album.getAlbumPopularity(),
+                album.getAlbumId()) > 0;
     }
 
     @Override

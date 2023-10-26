@@ -3,6 +3,7 @@ package poprock.domain;
 import org.springframework.stereotype.Service;
 import poprock.data.AlbumRepo;
 import poprock.models.Album;
+import poprock.models.Artist;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,7 +21,22 @@ public class AlbumService {
     }
 
     public Result<Album> update(Album album) {
-        return null;
+        Result<Album> result = validate(album);
+        if (!result.isSuccess()) {
+            return result;
+        }
+
+        if (album.getAlbumId() <= 0) {
+            result.addMessage("artistId must be set for `update` operation", ResultType.INVALID);
+            return result;
+        }
+
+        if (!repo.update(album)) {
+            String msg = String.format("artistId: %s, not found", album.getAlbumId());
+            result.addMessage(msg, ResultType.NOT_FOUND);
+        }
+
+        return result;
     }
 
     public boolean deleteById(int albumId) {

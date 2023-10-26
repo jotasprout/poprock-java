@@ -8,6 +8,8 @@ public interface AlbumRepo {
 
     List<Album> findAll();
 
+    boolean update(Album album);
+
     Album findById(int albumId);
 
     Album add(Album album);

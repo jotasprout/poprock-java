@@ -6,12 +6,6 @@ export default function AlbumList({albumsList, artistId}){
     const albums = albumsList.items;
     const xId = artistId;
 
-    // const albums = props.albumsList.items;
-    
-    // if (!props){
-    //     return null;
-    // }
-
     // https://api.spotify.com/v1/albums/{id}
     // above is for getting popularity
 
@@ -26,7 +20,6 @@ export default function AlbumList({albumsList, artistId}){
 
     return (
         <div>
-
             <div id="albums">
                 <h2>Albums</h2>
                 <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
@@ -36,27 +29,6 @@ export default function AlbumList({albumsList, artistId}){
                     })}
                 </div>            
             </div>
-            {/* <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Spotify ID</th>
-                        <th>Art URL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {albums.map((album, index) => (
-
-                        <tr key={index}>
-                            <td>no id yet</td>
-                            <td>{album.name}</td>
-                            <td>{album.id}</td>
-                            <td>{album.images[0].url}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table > */}
        </div>
     );
 }
