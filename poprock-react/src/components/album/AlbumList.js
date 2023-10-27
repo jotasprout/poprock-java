@@ -6,8 +6,6 @@ export default function AlbumList({albumsList, artistId}){
     const albums = albumsList.items;
     const xId = artistId;
 
-
-
     if (!albums){
         return null;
     };

@@ -18,7 +18,7 @@ public class CommonAlbumController {
         this.service = service;
     }
 
-    @GetMapping("/artist/{artistId}")
+    @GetMapping("/{artistId}")
     public List<Album> findCommonAlbumsByArtistId(@PathVariable int artistId) {
         return service.findCommonAlbumsByArtistId(artistId);
     }

@@ -83,7 +83,7 @@ where album_artist_id_spot = "1Fmb52lZ6Jv7FMWXXTPO3K"
 	or album_artist_id_spot = "5eTq3PxbOh5vgeRXKNqPyV"
     or album_artist_id_spot = "5NhjPre67qjeeQP4KHDHpe";
     
--- Add Tom Pett as common artist
+-- Add Tom Petty as common artist
 update album_common_lookup set common_artist_id = 4 
 where album_artist_id_spot = "2UZMlIwnkgAEDBsw1Rejkn"
 	or album_artist_id_spot = "4tX2TplrkIP4v05BNC903e"

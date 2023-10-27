@@ -1,45 +1,70 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import heart from '../../img/heart.png';
 
 export default function Scatter() {
 
-    const bowie = "0oSGxfWSnnOXhD2fKuz2Gy";         // 6
-    const sabbath = "5M52tdBnJaKSvOpJGz8mfZ";       // 15
-    const dio = "4CYeVo5iZbtYGBN4Isc3n6";           // 10
-    const prince = "5a2EaR3hamoenG9rDuVn8j";        // 6
-    const priest = "2tRsMl4eGxwoNabM08Dm4I";        // 
-    const purple = "568ZhdwyaiCyOGJRtNYhWf";        // 14
-    const rainbow = "6SLAMfhOi7UJI0fMztaK0m";       // 4
-    const elf = "3RYdggbT5C9r4BsljokJ1Q";           // 2
-    const hnh = "4UjiBRkTw9VmvDZiJZKPJ7";           // 1
-    const heartbreakers = "4tX2TplrkIP4v05BNC903e"; // 13
-    const tompettysolo = "2UZMlIwnkgAEDBsw1Rejkn";  // 3
-    const blackhearts = "1Fmb52lZ6Jv7FMWXXTPO3K";   // 13
-    const runaways = "5eTq3PxbOh5vgeRXKNqPyV";      // 4
-    const evilstig = "5NhjPre67qjeeQP4KHDHpe";      // 1
+    const jj = 21;
+    const rjd = 8;
+    const tp = 4;
 
     const canvasRef = useRef(null);
 
+    const [commonAlbums, setCommonAlbums] = useState([]);
+
     useEffect(() => {
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext('2d');
-  
-      // Define your data here (for example)
-      const data = [
-        { x: 10, y: 20, imageUrl: `${heart}` },
-        { x: 30, y: 40, imageUrl: `${heart}` },
-        // Add more data points as needed
-      ];
-  
-      // Draw scatterplot
-      data.forEach(point => {
-        const img = new Image();
-        img.src = point.imageUrl;
-        img.onload = () => {
-          ctx.drawImage(img, point.x, point.y, 20, 20); // Adjust dimensions as needed
+
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+
+        const fetchMyAlbums = async () => {
+            const response = await fetch(`http://localhost:8080/api/commonalbum/${jj}`);
+
+            if (response.ok) {
+                const data = await response.json();
+                setCommonAlbums(data);
+                console.log(data);
+            } else {
+                setCommonAlbums(null);
+            }
         };
-      });
+
+        fetchMyAlbums();
+
+        // Draw scatterplot
+        commonAlbums.forEach(point => {
+            const img = new Image();
+            img.src = point.imageUrl;
+            img.onload = () => {
+                ctx.drawImage(img, point.x, point.y, 20, 20); // Adjust dimensions as needed
+            };
+        });
+
     }, []);
+
+    if (!commonAlbums){
+        return null;
+    };
+
+        // const data = [
+        //   { x: 10, y: 20, imageUrl: `${heart}` },
+        //   { x: 30, y: 40, imageUrl: `${heart}` },
+        // ];
+
+    console.log(commonAlbums);
+
+    function compareYears(a, b){
+        if ( a.albumReleaseDate < b.albumReleaseDate ){
+            return -1;
+        }
+        if ( a.albumReleaseDate > b.albumReleaseDate ){
+            return 1;
+        }
+        return 0;
+    }
+
+    commonAlbums.sort(compareYears);
+
+
 
     return <canvas ref={canvasRef} width={800} height={600} />;
 
