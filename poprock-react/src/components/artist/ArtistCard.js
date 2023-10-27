@@ -25,7 +25,9 @@ export default function ArtistCard({artist}){
                 </div>
                 <div className='card-body'>
                     <h2 className='card-title fs-4'>{artist.artistName}</h2>
-                    <p><strong>Popularity:</strong> {artist.artistPopularity}
+                    <p><strong>Id:</strong> {artist.artistId}
+                        <br />
+                        <strong>Popularity:</strong> {artist.artistPopularity}
                         <br />
                         <strong>Followers:</strong> {artist.artistFollowers}
                         <br />

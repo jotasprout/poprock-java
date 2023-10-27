@@ -6,6 +6,10 @@
     max-width:100%;
 } */
 
+.thumbs {
+    margin: auto;
+}
+
 .imageHolder {
     justify-content:center;
     margin: 2px 0 0 0;
@@ -15,11 +19,25 @@
     bottom: 0;
 }
 
+/* @keyframes animation {
+    from {
+      bottom: -60px
+    }
+    to {
+      bottom: 20px
+    }
+} */
+
 .popUnit {
     height: 5px;
     width: 70px;
     margin: 1px auto;
     background-color: blue;
+    /* bottom: -100%;
+    opacity:0;
+    left: 50%;
+    border-radius: 10px;
+    animation: smooth-appear 1s ease forwards; */
 }
 
 .popContainer {
@@ -51,6 +69,7 @@
 .colsContainer {
     vertical-align: bottom;
     height: 600px;
+    margin: 0 0 50px 0;
 }
 
 .App-logo {

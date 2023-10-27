@@ -19,3 +19,13 @@ select song.song_name, artist.artist_name, album.album_name, album.year_released
     
 delete from artist where artist_id > 12;
 delete from album where album_id > 5;
+
+-- get RJD albums
+INSERT INTO album_common_lookup
+SELECT * 
+FROM poprock.album 
+where album_artist_id_spot = ""
+	or album_artist_id_spot = ""
+    or album_artist_id_spot = ""
+    or album_artist_id_spot = ""
+    or album_artist_id_spot = "";

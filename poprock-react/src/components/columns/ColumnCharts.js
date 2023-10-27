@@ -1,4 +1,5 @@
 import ArtistContainer from "./ColumnContainer";
+import ArtistThumb from "../artist/ArtistThumb";
 import { useEffect, useState } from "react";
 
 export default function ColumnCharts () {
@@ -18,6 +19,33 @@ export default function ColumnCharts () {
     const blackhearts = "1Fmb52lZ6Jv7FMWXXTPO3K";
     const runaways = "5eTq3PxbOh5vgeRXKNqPyV";
     const evilstig = "5NhjPre67qjeeQP4KHDHpe";
+
+    const [artists, setArtists] = useState([]);
+
+    useEffect(() => {
+        const fetchArtists = async () => {
+            const response = await fetch("http://localhost:8080/api/artist");
+            if (response.ok) {
+                setArtists(await response.json());
+            } else {
+                setArtists([]);
+            }
+        };
+
+        fetchArtists();
+    }, []);
+
+    function compareArtists(a, b){
+        if ( a.artistName < b.artistName ){
+            return -1;
+        }
+        if ( a.artistName > b.artistName ){
+            return 1;
+        }
+        return 0;
+    }
+
+    artists.sort(compareArtists);
 
     const [myAlbums, setMyAlbums] = useState([]);
     let myArtist = `${sabbath}`;
@@ -50,13 +78,22 @@ export default function ColumnCharts () {
     return (
         <div id="columnContainer" className="container">
             {/* <h1>Column Chart</h1> */}
+
             <div className='row colsContainer'>
 
                 {myAlbums.map(album => {
                     console.log(album);
                     return <ArtistContainer album={album} key={album.albumId}/>
                 })}
-            </div>            
+            </div>    
+            <hr />
+            <p> <br /></p>
+            <div className='thumbs row row-cols-4 row-cols-md-6 row-cols-lg-8 g-12'>
+            {artists.map(artist => {
+                    // console.log(artist);
+                    return <ArtistThumb artist={artist} key={artist.artistId}/>
+                })}
+            </div>        
         </div>
     );
 }
