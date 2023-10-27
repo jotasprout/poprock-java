@@ -80,7 +80,7 @@ export default function Auth(){
                     {artist.images.length ? <img width={"50%"} src={artist.images[0].url} alt=""/> : <div>No Image</div>}
                     <p>
                         <strong>Artist: </strong>{artist.name}<br />
-                        <strong>Spotify ID: </strong>{artist.id}<br />
+                        {/* <strong>Spotify ID: </strong>{artist.id}<br /> */}
                         <strong>Followers: </strong>{grabFollowers(artist)}<br />
                         <strong>Popularity: </strong>{artist.popularity}
                     </p>

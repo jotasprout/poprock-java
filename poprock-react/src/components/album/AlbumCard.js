@@ -67,10 +67,11 @@ export default function AlbumCard({album, artistId}){
                     </div>
                     <div className='card-body'>
                         <h3 className='card-title fs-4'>{album.name}</h3>
-                        <p><strong>Spotify ID:</strong> {album.id}
-                            <br />
+                       {/* <p>
+                             <strong>Spotify ID:</strong> {album.id}
+                            <br /> 
                             <strong>Released:</strong> {album.release_date}
-                            </p>
+                            </p>*/}
                     </div>
                     <div className='card-footer d-flex justify-content-end'>
                         {/* <Link className='btn btn-outline-success me-2 btn-sm' to={`/albums/profile/${album.albumId}`}><strong>Profile</strong></Link> */}

@@ -60,10 +60,10 @@ export default function AlbumColumns () {
             </div>    
             <hr />
             <p> <br /></p>
-            <div className='thumbs row row-cols-4 row-cols-md-6 row-cols-lg-8 g-12'>
+            {/* <div className='thumbs row row-cols-4 row-cols-md-6 row-cols-lg-8 g-12'>
             <ArtistThumb />
 
-            </div>        
+            </div>         */}
         </div>
     );
 }

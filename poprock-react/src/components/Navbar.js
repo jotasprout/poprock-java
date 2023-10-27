@@ -26,21 +26,21 @@ export default function Navbar() {
                                 Albums
                             </NavLink>
                         </li>
-                        <li className='nav-item'>
+                        {/* <li className='nav-item'>
                             <NavLink className='nav-link' to='/artistcolumns'>
                                 Artist Columns
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li className='nav-item'>
                             <NavLink className='nav-link' to='/albumcolumns'>
-                                Album Columns
+                                Columns
                             </NavLink>
                         </li>
-                        <li className='nav-item'>
+                        {/* <li className='nav-item'>
                             <NavLink className='nav-link' to='/scatter'>
                                 Scatter
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li className='nav-item'>
                             <NavLink className='nav-link' to='/force'>
                                 Force
@@ -64,10 +64,10 @@ export default function Navbar() {
                         </li> */}
                     </ul>
 
-                    <form className="d-flex">
+                    {/* <form className="d-flex">
                         <input className="form-control me-sm-2" type="search" placeholder="Search" />
                         <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    </form> */}
 
                 </div>
 

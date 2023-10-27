@@ -103,7 +103,7 @@ export default function ArtistForm() {
     // TODO Copy lines 79-81 above to similar code in other components
 
     return (
-        <>
+        <div id="artists" className="container">
             {/* <h1>{artist.artistName > 0 ? 'Update' : 'Add'}</h1> */}
             <h1>Update {artist.artistName}</h1>
             <form onSubmit={handleSubmit}>
@@ -137,6 +137,6 @@ export default function ArtistForm() {
                 </div>
                 <FormErrors errors={errors} />
             </form>
-        </>
+        </div>
     );
 }
