@@ -3,6 +3,7 @@ package poprock.domain;
 import org.springframework.stereotype.Service;
 import poprock.data.CommonAlbumRepo;
 import poprock.models.Album;
+import poprock.models.CommonAlbum;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class CommonAlbumService {
         this.repo = repo;
     }
 
-    public List<Album> findCommonAlbumsByArtistId(int artistId){
+    public List<CommonAlbum> findCommonAlbumsByArtistId(int artistId){
         return repo.findCommonAlbumsByArtistId(artistId);
     }
 

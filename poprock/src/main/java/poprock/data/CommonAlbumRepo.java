@@ -1,11 +1,11 @@
 package poprock.data;
 
-import poprock.models.Album;
+import poprock.models.CommonAlbum;
 
 import java.util.List;
 
 public interface CommonAlbumRepo {
 
-    List<Album> findCommonAlbumsByArtistId(int artistId);
+    List<CommonAlbum> findCommonAlbumsByArtistId(int artistId);
 
 }

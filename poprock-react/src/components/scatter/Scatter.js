@@ -13,10 +13,10 @@ export default function Scatter() {
 
     useEffect(() => {
 
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
+        // const canvas = canvasRef.current;
+        // const ctx = canvas.getContext('2d');
 
-        const fetchMyAlbums = async () => {
+        const fetchCommonAlbums = async () => {
             const response = await fetch(`http://localhost:8080/api/commonalbum/${jj}`);
 
             if (response.ok) {
@@ -28,16 +28,16 @@ export default function Scatter() {
             }
         };
 
-        fetchMyAlbums();
+        fetchCommonAlbums();
 
         // Draw scatterplot
-        commonAlbums.forEach(point => {
-            const img = new Image();
-            img.src = point.imageUrl;
-            img.onload = () => {
-                ctx.drawImage(img, point.x, point.y, 20, 20); // Adjust dimensions as needed
-            };
-        });
+        // commonAlbums.forEach(point => {
+        //     const img = new Image();
+        //     img.src = point.imageUrl;
+        //     img.onload = () => {
+        //         ctx.drawImage(img, point.x, point.y, 20, 20); // Adjust dimensions as needed
+        //     };
+        // });
 
     }, []);
 
@@ -52,20 +52,18 @@ export default function Scatter() {
 
     console.log(commonAlbums);
 
-    function compareYears(a, b){
-        if ( a.albumReleaseDate < b.albumReleaseDate ){
-            return -1;
-        }
-        if ( a.albumReleaseDate > b.albumReleaseDate ){
-            return 1;
-        }
-        return 0;
-    }
+    // function compareYears(a, b){
+    //     if ( a.albumReleaseDate < b.albumReleaseDate ){
+    //         return -1;
+    //     }
+    //     if ( a.albumReleaseDate > b.albumReleaseDate ){
+    //         return 1;
+    //     }
+    //     return 0;
+    // }
 
-    commonAlbums.sort(compareYears);
+    // commonAlbums.sort(compareYears);
 
-
-
-    return <canvas ref={canvasRef} width={800} height={600} />;
+    // return <canvas ref={canvasRef} width={800} height={600} />;
 
 }

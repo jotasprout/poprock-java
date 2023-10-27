@@ -28,6 +28,11 @@ export default function Relations() {
                 sprite.textHeight = initNodeColor(node);
                 return sprite;
               }}
+              onNodeDragEnd={node => {
+                node.fx = node.x;
+                node.fy = node.y;
+                node.fz = node.z;
+              }}
             // nodeCanvasObject={(node, ctx, globalScale) => {
             //   const label = node.id;
             //   const fontSize = 12/globalScale;

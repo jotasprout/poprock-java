@@ -20,11 +20,11 @@ export default function AlbumColumns () {
     const evilstig = "5NhjPre67qjeeQP4KHDHpe";      // 1
 
     const [myAlbums, setMyAlbums] = useState([]);
-    let myArtist = `${sabbath}`;
+    // let myArtist = `${sabbath}`;
 
     useEffect(() => {
         const fetchMyAlbums = async () => {
-            const response = await fetch(`http://localhost:8080/api/album/artist/${rainbow}`);
+            const response = await fetch(`http://localhost:8080/api/album/artist/${sabbath}`);
             if (response.ok) {
                 setMyAlbums(await response.json());
             } else {

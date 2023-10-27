@@ -1,9 +1,8 @@
 package poprock.controllers;
 
 import org.springframework.web.bind.annotation.*;
-import poprock.domain.AlbumService;
 import poprock.domain.CommonAlbumService;
-import poprock.models.Album;
+import poprock.models.CommonAlbum;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class CommonAlbumController {
     }
 
     @GetMapping("/{artistId}")
-    public List<Album> findCommonAlbumsByArtistId(@PathVariable int artistId) {
+    public List<CommonAlbum> findCommonAlbumsByArtistId(@PathVariable int artistId) {
         return service.findCommonAlbumsByArtistId(artistId);
     }
 
