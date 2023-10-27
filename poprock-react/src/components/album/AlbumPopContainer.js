@@ -3,8 +3,6 @@ export default function AlbumPopContainer ({album}){
         const albumPopularity = album.albumPopularity;
         console.log(albumPopularity);
     
-        // let popUnits = [];
-    
         function makePopUnits(albumPopularity) {
             let popUnits = [];
           

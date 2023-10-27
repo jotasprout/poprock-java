@@ -31,11 +31,6 @@ export default function RelationTable(props){
         return null;
     }
 
-    
-    // console.log(props);
-    // console.log(rels);
-    // console.log(primaryMbid);
-
     function addArtistRel(artistRel, primaryMbid){
 
         const artistRelRequestBody = {
@@ -56,7 +51,6 @@ export default function RelationTable(props){
 		})
 			.then(res => {
 				if (res.ok) {
-					// navigate(`/artists/profile/${artistId}`);
                     console.log(`added ${artistRelRequestBody.relationName}`);
 				} else if (res.status === 400) {
 
@@ -71,7 +65,6 @@ export default function RelationTable(props){
 			.catch(console.error); 
 	}
 
-
     return (
         <div>
             <table className="table table-striped">
@@ -79,7 +72,6 @@ export default function RelationTable(props){
                     <tr>
                         
                         <th>Name</th>
-                        {/* <th>MBID</th> */}
                         <th>Type</th>
                         <th>Attribute</th>
                     </tr>
@@ -94,7 +86,6 @@ export default function RelationTable(props){
                             {artistRel.artist.name}
                             </Link>
                             </td>
-                            {/* <td>{artistRel.artist.id}</td> */}
                             <td>{artistRel.type}</td>
                             <td>{artistRel.attributes[0]}</td>
                         </tr>
@@ -105,9 +96,4 @@ export default function RelationTable(props){
 
     );
 
-//     <Link onClick={(e) => addArtistRel(artistRel, primaryMbid)}>
-//     {artistRel.artist.name}
-// </Link>
-
-// {artistRel.artist.name}
 }

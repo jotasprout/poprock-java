@@ -56,11 +56,6 @@ export default function ArtistForm() {
         event.preventDefault();
         updateArtist();
 
-        // if (artist.artistId > 0){
-        //     updateArtist();
-        // } else {
-        //     addArtist();
-        // }
     }
 
 	function updateArtist() {
@@ -87,7 +82,6 @@ export default function ArtistForm() {
 				} else if (res.status === 404) {
 					navigate('/404');
 				} else {
-					// Any other status code is unexpected and thrown to .catch()
 					return Promise.reject(
 						new Error(`Unexpected status code: ${res.status}`)
 					);

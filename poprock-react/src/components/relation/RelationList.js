@@ -14,7 +14,6 @@ export default function RelationList({artist}){
                 const data = await response.json();
                 setArtistRels(data);
                 // console.log(data);
-                // console.log("this is working");
             } else {
                 setArtistRels(null);
             }

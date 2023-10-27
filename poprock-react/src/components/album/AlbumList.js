@@ -19,7 +19,6 @@ export default function AlbumList({albumsList, artistId}){
                 <p>Add an Album by clicking the cover.</p>
                 <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5'>
                     {albums.map((album, index) => {
-                        // console.log(artist);
                         return <AlbumCard album={album} key={index} artistId={artistId} />
                     })}
                 </div>            

@@ -26,11 +26,6 @@ export default function Navbar() {
                                 Albums
                             </NavLink>
                         </li>
-                        {/* <li className='nav-item'>
-                            <NavLink className='nav-link' to='/artistcolumns'>
-                                Artist Columns
-                            </NavLink>
-                        </li> */}
                         <li className='nav-item'>
                             <NavLink className='nav-link' to='/albumcolumns'>
                                 Columns

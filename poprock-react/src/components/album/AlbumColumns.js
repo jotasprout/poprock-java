@@ -21,7 +21,6 @@ export default function AlbumColumns () {
     const evilstig = "5NhjPre67qjeeQP4KHDHpe";      // 1
 
     const [myAlbums, setMyAlbums] = useState([]);
-    // let myArtist = `${sabbath}`;
 
     useEffect(() => {
         const fetchMyAlbums = async () => {

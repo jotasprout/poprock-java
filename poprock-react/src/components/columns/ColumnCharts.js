@@ -19,35 +19,7 @@ export default function ColumnCharts () {
     const runaways = "5eTq3PxbOh5vgeRXKNqPyV";      // 4
     const evilstig = "5NhjPre67qjeeQP4KHDHpe";      // 1
 
-    // const [artists, setArtists] = useState([]);
-
-    // useEffect(() => {
-    //     const fetchArtists = async () => {
-    //         const response = await fetch("http://localhost:8080/api/artist");
-    //         if (response.ok) {
-    //             setArtists(await response.json());
-    //         } else {
-    //             setArtists([]);
-    //         }
-    //     };
-
-    //     fetchArtists();
-    // }, []);
-
-    // function compareArtists(a, b){
-    //     if ( a.artistName < b.artistName ){
-    //         return -1;
-    //     }
-    //     if ( a.artistName > b.artistName ){
-    //         return 1;
-    //     }
-    //     return 0;
-    // }
-
-    // artists.sort(compareArtists);
-
     const [myAlbums, setMyAlbums] = useState([]);
-    // let myArtist = `${sabbath}`;
 
     useEffect(() => {
         const fetchMyAlbums = async () => {
@@ -89,12 +61,7 @@ export default function ColumnCharts () {
             <p> <br /></p>
             {/* <div className='thumbs row row-cols-4 row-cols-md-6 row-cols-lg-8 g-12'>
             <ArtistThumb />
-
             </div>         */}
         </div>
     );
 }
-
-// {artists.map(artist => {
-//     return <ArtistThumb artist={artist} key={artist.artistId}/>
-// })}

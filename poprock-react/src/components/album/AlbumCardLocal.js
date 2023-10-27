@@ -36,8 +36,7 @@ export default function AlbumCardLocal({album, artistId}){
             if (response.ok) {
                 const data = await response.json()
                 updateAlbum(album, data);
-                // setAlbumFacts(data);
-                // console.log(data);
+
             } else {
                 setAlbumFacts([]);
             }
@@ -48,13 +47,7 @@ export default function AlbumCardLocal({album, artistId}){
     // });
 
     function updateAlbum(album, data){
-
-        // fetchSpotifyAlbumFacts(album.albumSpotifyId);
-
-        // if (albumFacts){
-        //     console.log(albumFacts);
-        // }
-        
+    
         const updatedAlbumRequestBody = {
             albumId: album.albumId,
             albumSpotifyId: album.albumSpotifyId,

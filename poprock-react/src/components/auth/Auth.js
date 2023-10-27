@@ -15,19 +15,6 @@ export default function Auth(){
     const [searchKey, setSearchKey] = useState("");
     const [artists, setArtists] = useState([]);
 
-    // const {getToken} = useContext(SpotifyContext);
-
-    // const token = useContext(SpotifyContext);
-// console.log(token);
-    // useEffect(() => {
-    //     getToken();
-    // }, [])
-
-    // useEffect(() => {
-    //     let localToken = getToken();
-    //     setToken(localToken);
-    // }, [])
-
     useEffect(() => {
         const hash = window.location.hash;
         let token = window.localStorage.getItem('token');
@@ -73,8 +60,6 @@ export default function Auth(){
     const renderArtists = () => {
         return artists.map(artist => (
 
-            // let artistFollowers = artist.followers.total;
-
             <div key={artist.id}>
                 <Link onClick={(e) => addArtist(artist)}>
                     {artist.images.length ? <img width={"50%"} src={artist.images[0].url} alt=""/> : <div>No Image</div>}
@@ -101,13 +86,11 @@ export default function Auth(){
             artistPopularity: artist.popularity,
             artistFollowers: grabFollowers(artist),
             artistArtFilename: artist.images[0].url
-            // artistMbid: "",
         };
 
         // console.log(artist);
-        console.log(artistRequestBody);
-        //artistRequestBody.followers = grabFollowers(artist);
-        // console.log(artist);
+        // console.log(artistRequestBody);
+
 		fetch(`http://localhost:8080/api/artist`, {
 			method: 'POST',
 			headers: {
@@ -135,10 +118,6 @@ export default function Auth(){
         <section className="jumbotron text-center">
         <div className="container">
         
-            {/* <p>
-                <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-            </p> */}
             <div className="App">
                 <header className="App-header">
                     <h1>Spotify Search</h1>
@@ -160,7 +139,6 @@ export default function Auth(){
         </div>
     </section>
 
-       
         </>
 
     );

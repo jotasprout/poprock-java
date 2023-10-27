@@ -1,18 +1,9 @@
 import imageph from '../../img/image-ph.jpg';
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from 'axios';
 
 import RelationList from '../relation/RelationList';
 import AlbumList from '../album/AlbumList';
-
-// const INITIAL_ARTIST = {
-// 	artistId: 0,
-//     artistName: "",
-//     artistPopularity: "",
-//     artistFollowers: "",
-//     artistArtFilename: ""
-// };
 
 export default function ArtistProfile(){
 
@@ -30,7 +21,6 @@ export default function ArtistProfile(){
     }
 
     const {artistId} = useParams();
-    // console.log(artistId);
 
     const [artist, setArtist] = useState(null);
     const navigate = useNavigate();
@@ -68,12 +58,10 @@ export default function ArtistProfile(){
                 Authorization: `Bearer ${token}`
             }
         });
-        // console.log(response);
 
         if (response.ok) {
             const data = await response.json();
             setArtistSpotifyAlbums(data);
-            // console.log(data);
         } else {
             setArtistSpotifyAlbums([]);
         }

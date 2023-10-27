@@ -3,8 +3,6 @@ export default function ArtistPopContainer ({artist}){
         const artistPopularity = artist.artistPopularity;
         console.log(artistPopularity);
     
-        // let popUnits = [];
-    
         function makePopUnits(artistPopularity) {
             let popUnits = [];
           

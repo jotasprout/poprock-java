@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootswatch/dist/slate/bootstrap.min.css';
 
-// import { SpotifyProvider } from './context/SpotifyContext';
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 
@@ -32,7 +31,7 @@ import './App.css';
 
 export default function App() {
   return (
-    // <SpotifyProvider>
+
         <Router>
             <Header />
             <main>
@@ -71,7 +70,6 @@ export default function App() {
             </main>
 
         </Router>    
-    // </SpotifyProvider>
 
   );
 }
