@@ -1,0 +1,28 @@
+/*
+-- Query: SELECT album_name, album_artist_id_spot, album_id_spot, album_pop, release_date, album_art_filename 
+FROM poprock.album 
+where album_artist_id_spot = "2UZMlIwnkgAEDBsw1Rejkn"
+	or album_artist_id_spot = "4tX2TplrkIP4v05BNC903e"
+    or album_artist_id_spot = "2hO4YtXUFJiUYS2uYFvHNK"
+LIMIT 0, 5000
+
+-- Date: 2023-10-27 04:12
+*/
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Hypnotic Eye','4tX2TplrkIP4v05BNC903e','55dSc0Ry199sq95DwnHFFa',34,'2014','https://i.scdn.co/image/ab67616d0000b27301544c4984d4883499a278d0');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Mojo','4tX2TplrkIP4v05BNC903e','1x0nxFkOWytBolK91qkUSJ',40,'2010','https://i.scdn.co/image/ab67616d0000b273d611c359261b67d0e5d5accc');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('The Last DJ','4tX2TplrkIP4v05BNC903e','3lS4vVIHslBZgLituEQz5i',35,'2002','https://i.scdn.co/image/ab67616d0000b2736671606dc8f66869a1070766');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Echo','4tX2TplrkIP4v05BNC903e','1lsBEh2R9B39hWfEo4iZSW',40,'1999','https://i.scdn.co/image/ab67616d0000b2737f82a09dfb7a68b7ce539895');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Into The Great Wide Open','4tX2TplrkIP4v05BNC903e','42G5ULkCRRl3crJMlg6eKd',65,'1991','https://i.scdn.co/image/ab67616d0000b27327bd7d234a31296df34b9a64');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('She\'s the One (Songs and Music from the Motion Picture)','4tX2TplrkIP4v05BNC903e','0FVwC6leDmim0EO68PjYto',46,'1996','https://i.scdn.co/image/ab67616d0000b273cba44c10e994e15a9668a911');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Let Me Up (I\'ve Had Enough)','4tX2TplrkIP4v05BNC903e','1jti40LLiMKDuSci8PB2RZ',38,'1987','https://i.scdn.co/image/ab67616d0000b273c2e46decb356ecb67cc9baa7');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Southern Accents','4tX2TplrkIP4v05BNC903e','2uslG8GJwri1ewdlK2Uuv4',49,'1985','https://i.scdn.co/image/ab67616d0000b273e4ecf4545405fb61706db860');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Long After Dark','4tX2TplrkIP4v05BNC903e','2ztfSQWXGq5RKDItE9E3oQ',49,'1982','https://i.scdn.co/image/ab67616d0000b273783b5cd3b6384497bcf4bb4d');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Hard Promises','4tX2TplrkIP4v05BNC903e','5OO8oMupaMhIZhMrEM8ja3',51,'1981','https://i.scdn.co/image/ab67616d0000b273cc5ff69ede344df741c46aea');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Damn The Torpedoes (Remastered)','4tX2TplrkIP4v05BNC903e','0qKA3aqubD47jfFVoPfsiy',33,'1979','https://i.scdn.co/image/ab67616d0000b27341790be98b0b04beed520b34');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('You\'re Gonna Get It!','4tX2TplrkIP4v05BNC903e','5hULIIwBVNm3cinAAFmv1P',49,'1978','https://i.scdn.co/image/ab67616d0000b273542cbb9bc4b310479020223f');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Tom Petty & The Heartbreakers','4tX2TplrkIP4v05BNC903e','6TLTd0P2CUI0Q29AQ1LyFi',66,'1976','https://i.scdn.co/image/ab67616d0000b2737e42a53ea7f2ad4f36ab23a5');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Wildflowers','2UZMlIwnkgAEDBsw1Rejkn','3ZGUBwDiY5HPOcWv4SBPQg',65,'1994','https://i.scdn.co/image/ab67616d0000b27341be6d9cf0ec0067d095a072');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Highway Companion','2UZMlIwnkgAEDBsw1Rejkn','1CvE8Bp9CDOArk2aL3NuC4',48,'2006','https://i.scdn.co/image/ab67616d0000b27333ddc5c6cbcd5246b39fdac3');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('Full Moon Fever','2UZMlIwnkgAEDBsw1Rejkn','5d71Imt5CIb7LpQwDMQ093',75,'1989','https://i.scdn.co/image/ab67616d0000b27336572e6726714544f5bed456');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('The Traveling Wilburys, Vol. 1','2hO4YtXUFJiUYS2uYFvHNK','7K3OJcdtRxv7miXfQBzvbi',66,'1988','https://i.scdn.co/image/ab67616d0000b273d9e06f988048ecf3c54ca749');
+INSERT INTO `album_common_lookup` (`album_name`,`album_artist_id_spot`,`album_id_spot`,`album_pop`,`release_date`,`album_art_filename`) VALUES ('The Traveling Wilburys, Vol. 3','2hO4YtXUFJiUYS2uYFvHNK','1DGMD70zay4ZtN9XLX0uY4',49,'1990','https://i.scdn.co/image/ab67616d0000b273f62bc15d81fca5ef4aa12dd9');
