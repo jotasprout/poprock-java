@@ -27,8 +27,13 @@ export default function Navbar() {
                             </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to='/columns'>
-                                Columns
+                            <NavLink className='nav-link' to='/artistcolumns'>
+                                Artist Columns
+                            </NavLink>
+                        </li>
+                        <li className='nav-item'>
+                            <NavLink className='nav-link' to='/albumcolumns'>
+                                Album Columns
                             </NavLink>
                         </li>
                         <li className='nav-item'>

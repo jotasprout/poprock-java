@@ -1,5 +1,4 @@
-import PopUnit
- from "./PopUnit";
+// import PopUnit from "./PopUnit";
 export default function PopContainer ({album}){
 console.log(album);
     const albumPopularity = album.albumPopularity;

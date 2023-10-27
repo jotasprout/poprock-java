@@ -20,7 +20,10 @@ import Relations from './components/relation/Relations';
 
 import AlbumGallery from './components/album/AlbumGallery';
 import Scatter from './components/scatter/Scatter';
+
 import ColumnCharts from './components/columns/ColumnCharts';
+import ArtistColumns from './components/artist/ArtistColumns';
+import AlbumColumns from './components/album/AlbumColumns';
 
 import NotFound from "./components/NotFound";
 import Error from './components/errors/Error';
@@ -54,6 +57,8 @@ export default function App() {
                     <Route path='/albums' element={<AlbumGallery />} />
                     <Route path='/scatter' element={<Scatter />} />
                     <Route path='/columns' element={<ColumnCharts />} />
+                    <Route path='/artistcolumns' element={<ArtistColumns />} />
+                    <Route path='/albumcolumns' element={<AlbumColumns />} />
 
                     <Route path='/force' element={<Relations />} />
 

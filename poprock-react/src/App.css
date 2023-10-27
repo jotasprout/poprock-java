@@ -6,8 +6,8 @@
     max-width:100%;
 } */
 
-.thumbs {
-    margin: auto;
+.artistThumb {
+    width: 100px;
 }
 
 .imageHolder {
@@ -54,7 +54,7 @@
     justify-content: flex-end;
 }
 
-.artistContainer {
+.columnContainer {
     /* height: 600px; */
     display:flex;
     justify-content:center;

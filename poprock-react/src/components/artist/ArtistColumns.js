@@ -1,8 +1,8 @@
-import AlbumContainer from "./AlbumContainer";
+import ArtistContainer from "./ArtistContainer";
 import ArtistThumb from "../artist/ArtistThumb";
 import { useEffect, useState } from "react";
 
-export default function AlbumColumns () {
+export default function ArtistColumns () {
 
     const bowie = "0oSGxfWSnnOXhD2fKuz2Gy";         // 6
     const sabbath = "5M52tdBnJaKSvOpJGz8mfZ";       // 15
@@ -47,33 +47,33 @@ export default function AlbumColumns () {
 
     artists.sort(compareArtists);
 
-    const [myAlbums, setMyAlbums] = useState([]);
+    const [myArtists, setMyArtists] = useState([]);
     let myArtist = `${sabbath}`;
 
     useEffect(() => {
-        const fetchMyAlbums = async () => {
-            const response = await fetch(`http://localhost:8080/api/album/artist/${heartbreakers}`);
+        const fetchMyArtists = async () => {
+            const response = await fetch(`http://localhost:8080/api/artist/artist/${heartbreakers}`);
             if (response.ok) {
-                setMyAlbums(await response.json());
+                setMyArtists(await response.json());
             } else {
-                setMyAlbums([]);
+                setMyArtists([]);
             }
         };
 
-        fetchMyAlbums();
+        fetchMyArtists();
     }, []);
 
     function compareYears(a, b){
-        if ( a.albumReleaseDate < b.albumReleaseDate ){
+        if ( a.artistReleaseDate < b.artistReleaseDate ){
             return -1;
         }
-        if ( a.albumReleaseDate > b.albumReleaseDate ){
+        if ( a.artistReleaseDate > b.artistReleaseDate ){
             return 1;
         }
         return 0;
     }
 
-    myAlbums.sort(compareYears);
+    myArtists.sort(compareYears);
 
     return (
         <div id="columnContainer" className="container">
@@ -81,9 +81,9 @@ export default function AlbumColumns () {
 
             <div className='row colsContainer'>
 
-                {myAlbums.map(album => {
-                    console.log(album);
-                    return <AlbumContainer album={album} key={album.albumId}/>
+                {myArtists.map(artist => {
+                    console.log(artist);
+                    return <ArtistContainer artist={artist} key={artist.artistId}/>
                 })}
             </div>    
             <hr />

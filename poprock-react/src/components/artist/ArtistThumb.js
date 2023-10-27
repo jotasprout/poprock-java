@@ -15,43 +15,54 @@ export default function ArtistThumb({artist}){
     }
 
     return (
-        <div key={artist.artistId} className='col'>
+        <div>
+            <div>
+                <img 
+                    id='6'
+                    className='artistThumb'
+                    src='https://i.scdn.co/image/5931700f9515dd6587230130beb615e0549e47dc' 
+                />
+            </div>
 
-            {/* <div class="card text-white bg-primary mb-3" >
-                <div class="card-header">{artist.artistName}</div>
-                <div class="card-body"> */}
-                    <div>
-                        <img 
-                        className='card-img-top'
-                        style={{width: '100px', objectFit: 'cover'}}
-                        src={`${phCheck(artist.artistArtFilename)}`} />
-                    </div>
-                {/* </div>
-            </div> */}
+            <div>
+                <img 
+                    id='8'
+                    className='artistThumb'
+                    src='https://i.scdn.co/image/ab6761610000e5eb555c8199ba80168cfeafdfbc' 
+                />
+            </div>
+
+            <div>
+                <img 
+                    id='21'
+                    className='artistThumb'
+                    src='https://i.scdn.co/image/ab6761610000e5eb358cc74a410c5476802f9fb9' 
+                />
+            </div>
+            <div>
+                <img 
+                    id=''
+                    className='artistThumb'
+                    src='' 
+                />
+            </div>
+
+            <div>
+                <img 
+                    id=''
+                    className='artistThumb'
+                    src='' 
+                />
+            </div>
+
+            <div>
+                <img 
+                    id=''
+                    className='artistThumb'
+                    src='' 
+                />
+            </div>
 
         </div>
     );
 }
-
-{/* <div className='card h-100'>
-<div>
-    <img 
-    className='card-img-top'
-    style={{width: '100%', objectFit: 'cover'}}
-    src={`${phCheck(artist.artistArtFilename)}`} />
-</div>
-<div className='card-body'>
-    <h2 className='card-title fs-4'>{artist.artistName}</h2>
-    <p><strong>Popularity:</strong> {artist.artistPopularity}
-        <br />
-        <strong>Followers:</strong> {artist.artistFollowers}
-        <br />
-        <strong>Spotify ID:</strong> {artist.artistSpotifyId}
-        </p>
-</div>
-<div className='card-footer d-flex justify-content-end'>
-    <Link className='btn btn-outline-success me-2 btn-sm' to={`/artists/profile/${artist.artistId}`}><strong>Profile</strong></Link>
-    <Link className='btn btn-outline-warning me-2 btn-sm' to={`/artists/edit/${artist.artistId}`}><strong>Edit</strong></Link>
-    <Link className='btn btn-outline-danger me-2 btn-sm' to={`/artists/delete/${artist.artistId}`}><strong>Delete</strong></Link>
-</div>
-</div> */}

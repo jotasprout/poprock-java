@@ -33,8 +33,8 @@ export default function ArtistCard({artist}){
                         <br />
                         <strong>Spotify ID:</strong> {artist.artistSpotifyId}
                     
-                        {/* <br />
-                        <strong>Artist Art:</strong> {artist.artistArtFilename} */}
+                        <br />
+                        <strong>Artist Art:</strong> {artist.artistArtFilename}
                         </p>
                 </div>
                 <div className='card-footer d-flex justify-content-end'>
