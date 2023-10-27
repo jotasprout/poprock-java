@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function AlbumColumns () {
 
     const bowie = "0oSGxfWSnnOXhD2fKuz2Gy";         // 6
+    const beatles = "3WrFJ7ztbogyGnTHbHJFl2";       // 
     const sabbath = "5M52tdBnJaKSvOpJGz8mfZ";       // 15
     const dio = "4CYeVo5iZbtYGBN4Isc3n6";           // 10
     const prince = "5a2EaR3hamoenG9rDuVn8j";        // 6
